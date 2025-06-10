@@ -15,6 +15,16 @@ function App() {
     setShowLoanFlow(true);
   };
 
+  const handleUserPortalLogin = () => {
+    // User Portal Login button will open the loan application flow starting with login
+    setShowLoanFlow(true);
+  };
+
+  const handleCreateAccount = () => {
+    // Create Account button will open the loan application flow starting with signup
+    setShowLoanFlow(true);
+  };
+
   const handleBackToHome = () => {
     setShowLoanFlow(false);
   };
@@ -25,7 +35,10 @@ function App() {
 
   return (
     <div className="min-h-screen">
-      <Header onLoginClick={handleApplyClick} onSignupClick={handleApplyClick} />
+      <Header 
+        onLoginClick={handleUserPortalLogin} 
+        onSignupClick={handleCreateAccount} 
+      />
       <HeroSection onApplyClick={handleApplyClick} />
       <VehicleQualification />
       <ServicesSection onApplyClick={handleApplyClick} />

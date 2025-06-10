@@ -17,6 +17,16 @@ const Header: React.FC<HeaderProps> = ({ onLoginClick, onSignupClick }) => {
     { name: 'Contact us', href: '#contact' },
   ];
 
+  const handleUserPortalClick = () => {
+    // This will trigger the loan application flow which includes login
+    onLoginClick?.();
+  };
+
+  const handleCreateAccountClick = () => {
+    // This will trigger the loan application flow starting with signup
+    onSignupClick?.();
+  };
+
   return (
     <header className="bg-teal-700 text-white sticky top-0 z-50 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -41,14 +51,14 @@ const Header: React.FC<HeaderProps> = ({ onLoginClick, onSignupClick }) => {
           {/* Desktop Auth Buttons */}
           <div className="hidden md:flex items-center space-x-4">
             <button 
-              onClick={onLoginClick}
-              className="flex items-center space-x-2 hover:text-yellow-400 transition-colors duration-200"
+              onClick={handleUserPortalClick}
+              className="flex items-center space-x-2 hover:text-yellow-400 transition-colors duration-200 font-medium"
             >
               <LogIn size={16} />
               <span>User Portal Login</span>
             </button>
             <button 
-              onClick={onSignupClick}
+              onClick={handleCreateAccountClick}
               className="bg-white text-teal-700 px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors duration-200"
             >
               Create Account
@@ -83,17 +93,17 @@ const Header: React.FC<HeaderProps> = ({ onLoginClick, onSignupClick }) => {
               <div className="flex flex-col space-y-2 pt-3 border-t border-teal-600">
                 <button 
                   onClick={() => {
-                    onLoginClick?.();
+                    handleUserPortalClick();
                     setIsMenuOpen(false);
                   }}
-                  className="flex items-center space-x-2 hover:text-yellow-400 transition-colors duration-200 text-left"
+                  className="flex items-center space-x-2 hover:text-yellow-400 transition-colors duration-200 text-left font-medium"
                 >
                   <LogIn size={16} />
                   <span>User Portal Login</span>
                 </button>
                 <button 
                   onClick={() => {
-                    onSignupClick?.();
+                    handleCreateAccountClick();
                     setIsMenuOpen(false);
                   }}
                   className="bg-white text-teal-700 px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors duration-200"
