@@ -7,9 +7,10 @@ import IncomeInformationStep from './IncomeInformationStep';
 import VehicleInformationStep from './VehicleInformationStep';
 import DocumentUploadStep from './DocumentUploadStep';
 import UserDashboard from './UserDashboard';
+import CoApplicantForm from './CoApplicantForm';
 import { ApplicationStep, ApplicationData, UserProfile } from '../types/ApplicationTypes';
 
-type FlowStep = 'login' | 'signup' | 'estimate' | 'progress' | 'verification' | 'personal' | 'income' | 'vehicle' | 'documents' | 'dashboard';
+type FlowStep = 'login' | 'signup' | 'estimate' | 'progress' | 'verification' | 'personal' | 'income' | 'vehicle' | 'documents' | 'dashboard' | 'co-applicant';
 
 interface FormData {
   email: string;
@@ -172,6 +173,25 @@ const LoanApplicationFlow: React.FC<LoanApplicationFlowProps> = ({ onBackToHome 
       storage.updateApplicationStep(currentApplication.id, 'income', data);
       const updatedApp = storage.getApplication(currentApplication.id);
       if (updatedApp) setCurrentApplication(updatedApp);
+      
+      // Check if co-applicant was selected
+      if (data.hasCoApplicant) {
+        setCurrentStep('co-applicant');
+      } else {
+        setCurrentStep('vehicle');
+      }
+    }
+  };
+
+  const handleCoApplicantNext = (data: any) => {
+    if (currentApplication) {
+      // Save co-applicant data
+      storage.updateApplicationStep(currentApplication.id, 'income', { 
+        ...currentApplication.incomeInfo, 
+        coApplicantData: data 
+      });
+      const updatedApp = storage.getApplication(currentApplication.id);
+      if (updatedApp) setCurrentApplication(updatedApp);
       setCurrentStep('vehicle');
     }
   };
@@ -222,11 +242,18 @@ const LoanApplicationFlow: React.FC<LoanApplicationFlowProps> = ({ onBackToHome 
   };
 
   const handleBackClick = () => {
-    const stepOrder: FlowStep[] = ['login', 'signup', 'estimate', 'progress', 'verification', 'personal', 'income', 'vehicle', 'documents'];
+    const stepOrder: FlowStep[] = ['login', 'signup', 'estimate', 'progress', 'verification', 'personal', 'income', 'co-applicant', 'vehicle', 'documents'];
     const currentIndex = stepOrder.indexOf(currentStep);
     
     if (currentIndex > 0) {
-      setCurrentStep(stepOrder[currentIndex - 1]);
+      // Special handling for co-applicant step
+      if (currentStep === 'vehicle' && currentApplication?.incomeInfo.hasCoApplicant) {
+        setCurrentStep('co-applicant');
+      } else if (currentStep === 'co-applicant') {
+        setCurrentStep('income');
+      } else {
+        setCurrentStep(stepOrder[currentIndex - 1]);
+      }
     } else {
       onBackToHome?.();
     }
@@ -245,6 +272,16 @@ const LoanApplicationFlow: React.FC<LoanApplicationFlowProps> = ({ onBackToHome 
         user={currentUser} 
         application={currentApplication} 
         onLogout={handleLogout}
+      />
+    );
+  }
+
+  // Co-applicant form view
+  if (currentStep === 'co-applicant') {
+    return (
+      <CoApplicantForm
+        onNext={handleCoApplicantNext}
+        onBack={handleBackClick}
       />
     );
   }
