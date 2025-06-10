@@ -1,7 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Eye, EyeOff, ArrowLeft, Home } from 'lucide-react';
+import ApplicationStorage from '../utils/ApplicationStorage';
+import ResumeApplicationModal from './ResumeApplicationModal';
+import PersonalInformationStep from './PersonalInformationStep';
+import IncomeInformationStep from './IncomeInformationStep';
+import VehicleInformationStep from './VehicleInformationStep';
+import DocumentUploadStep from './DocumentUploadStep';
+import UserDashboard from './UserDashboard';
+import { ApplicationStep, ApplicationData, UserProfile } from '../types/ApplicationTypes';
 
-type FlowStep = 'login' | 'signup' | 'estimate' | 'progress' | 'verification';
+type FlowStep = 'login' | 'signup' | 'estimate' | 'progress' | 'verification' | 'personal' | 'income' | 'vehicle' | 'documents' | 'dashboard';
 
 interface FormData {
   email: string;
@@ -25,6 +33,10 @@ const LoanApplicationFlow: React.FC<LoanApplicationFlowProps> = ({ onBackToHome 
   const [currentStep, setCurrentStep] = useState<FlowStep>('login');
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [showResumeModal, setShowResumeModal] = useState(false);
+  const [currentUser, setCurrentUser] = useState<UserProfile | null>(null);
+  const [currentApplication, setCurrentApplication] = useState<ApplicationData | null>(null);
+  
   const [formData, setFormData] = useState<FormData>({
     email: '',
     password: '',
@@ -39,6 +51,26 @@ const LoanApplicationFlow: React.FC<LoanApplicationFlowProps> = ({ onBackToHome 
     verificationCode: ['', '', '', '', '', '']
   });
 
+  const storage = ApplicationStorage.getInstance();
+
+  useEffect(() => {
+    // Check if user is returning with incomplete application
+    const urlParams = new URLSearchParams(window.location.search);
+    const email = urlParams.get('email');
+    
+    if (email) {
+      const user = storage.getUserByEmail(email);
+      if (user && user.hasActiveApplication && user.applicationId) {
+        const application = storage.getApplication(user.applicationId);
+        if (application && application.status === 'in_progress') {
+          setCurrentUser(user);
+          setCurrentApplication(application);
+          setShowResumeModal(true);
+        }
+      }
+    }
+  }, []);
+
   const handleInputChange = (field: keyof FormData, value: string | boolean | number) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
@@ -49,7 +81,6 @@ const LoanApplicationFlow: React.FC<LoanApplicationFlowProps> = ({ onBackToHome 
       newCode[index] = value;
       setFormData(prev => ({ ...prev, verificationCode: newCode }));
       
-      // Auto-focus next input
       if (value && index < 5) {
         const nextInput = document.getElementById(`code-${index + 1}`);
         nextInput?.focus();
@@ -61,6 +92,207 @@ const LoanApplicationFlow: React.FC<LoanApplicationFlowProps> = ({ onBackToHome 
     handleInputChange('loanAmount', parseInt(e.target.value));
   };
 
+  const handleLogin = () => {
+    const user = storage.getUserByEmail(formData.email);
+    
+    if (user) {
+      setCurrentUser(user);
+      
+      if (user.hasActiveApplication && user.applicationId) {
+        const application = storage.getApplication(user.applicationId);
+        if (application) {
+          setCurrentApplication(application);
+          
+          if (application.status === 'completed') {
+            setCurrentStep('dashboard');
+          } else {
+            setShowResumeModal(true);
+          }
+        }
+      } else {
+        setCurrentStep('estimate');
+      }
+    } else {
+      alert('User not found. Please sign up first.');
+    }
+  };
+
+  const handleSignup = () => {
+    const userId = `user_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+    
+    const newUser: UserProfile = {
+      id: userId,
+      email: formData.email,
+      firstName: formData.firstName,
+      lastName: formData.lastName,
+      phoneNumber: formData.phoneNumber,
+      hasActiveApplication: false,
+      accountStatus: 'active',
+      createdAt: new Date().toISOString()
+    };
+    
+    storage.saveUser(newUser);
+    setCurrentUser(newUser);
+    setCurrentStep('estimate');
+  };
+
+  const handleEstimateNext = () => {
+    if (currentUser) {
+      const application = storage.createApplication(currentUser.id, formData.loanAmount);
+      setCurrentApplication(application);
+      setCurrentStep('progress');
+    }
+  };
+
+  const handleProgressNext = () => {
+    if (currentApplication) {
+      storage.updateApplicationStep(currentApplication.id, 'verification', {});
+      setCurrentStep('verification');
+    }
+  };
+
+  const handleVerificationNext = () => {
+    if (currentApplication) {
+      storage.updateApplicationStep(currentApplication.id, 'personal', {});
+      setCurrentStep('personal');
+    }
+  };
+
+  const handlePersonalNext = (data: any) => {
+    if (currentApplication) {
+      storage.updateApplicationStep(currentApplication.id, 'personal', data);
+      const updatedApp = storage.getApplication(currentApplication.id);
+      if (updatedApp) setCurrentApplication(updatedApp);
+      setCurrentStep('income');
+    }
+  };
+
+  const handleIncomeNext = (data: any) => {
+    if (currentApplication) {
+      storage.updateApplicationStep(currentApplication.id, 'income', data);
+      const updatedApp = storage.getApplication(currentApplication.id);
+      if (updatedApp) setCurrentApplication(updatedApp);
+      setCurrentStep('vehicle');
+    }
+  };
+
+  const handleVehicleNext = (data: any) => {
+    if (currentApplication) {
+      storage.updateApplicationStep(currentApplication.id, 'vehicle', data);
+      const updatedApp = storage.getApplication(currentApplication.id);
+      if (updatedApp) setCurrentApplication(updatedApp);
+      setCurrentStep('documents');
+    }
+  };
+
+  const handleDocumentsNext = () => {
+    if (currentApplication) {
+      storage.completeApplication(currentApplication.id);
+      const updatedApp = storage.getApplication(currentApplication.id);
+      if (updatedApp) setCurrentApplication(updatedApp);
+      setCurrentStep('dashboard');
+    }
+  };
+
+  const handleResumeApplication = () => {
+    setShowResumeModal(false);
+    if (currentApplication) {
+      // Resume from where user left off
+      const stepMap: Record<ApplicationStep, FlowStep> = {
+        'login': 'login',
+        'signup': 'signup',
+        'estimate': 'estimate',
+        'progress': 'progress',
+        'verification': 'verification',
+        'personal': 'personal',
+        'income': 'income',
+        'vehicle': 'vehicle',
+        'documents': 'documents',
+        'review': 'documents',
+        'complete': 'dashboard'
+      };
+      
+      setCurrentStep(stepMap[currentApplication.currentStep] || 'personal');
+    }
+  };
+
+  const handleLeaveApplication = () => {
+    setShowResumeModal(false);
+    onBackToHome?.();
+  };
+
+  const handleBackClick = () => {
+    const stepOrder: FlowStep[] = ['login', 'signup', 'estimate', 'progress', 'verification', 'personal', 'income', 'vehicle', 'documents'];
+    const currentIndex = stepOrder.indexOf(currentStep);
+    
+    if (currentIndex > 0) {
+      setCurrentStep(stepOrder[currentIndex - 1]);
+    } else {
+      onBackToHome?.();
+    }
+  };
+
+  const handleLogout = () => {
+    setCurrentUser(null);
+    setCurrentApplication(null);
+    onBackToHome?.();
+  };
+
+  // Dashboard view
+  if (currentStep === 'dashboard' && currentUser && currentApplication) {
+    return (
+      <UserDashboard 
+        user={currentUser} 
+        application={currentApplication} 
+        onLogout={handleLogout}
+      />
+    );
+  }
+
+  // Application steps view
+  if (['personal', 'income', 'vehicle', 'documents'].includes(currentStep) && currentApplication) {
+    const completedSteps = currentApplication.completedSteps;
+    
+    switch (currentStep) {
+      case 'personal':
+        return (
+          <PersonalInformationStep
+            data={currentApplication.personalInfo}
+            onNext={handlePersonalNext}
+            onBack={handleBackClick}
+            completedSteps={completedSteps}
+          />
+        );
+      case 'income':
+        return (
+          <IncomeInformationStep
+            data={currentApplication.incomeInfo}
+            onNext={handleIncomeNext}
+            onBack={handleBackClick}
+            completedSteps={completedSteps}
+          />
+        );
+      case 'vehicle':
+        return (
+          <VehicleInformationStep
+            data={currentApplication.vehicleInfo}
+            onNext={handleVehicleNext}
+            onBack={handleBackClick}
+            completedSteps={completedSteps}
+          />
+        );
+      case 'documents':
+        return (
+          <DocumentUploadStep
+            onNext={handleDocumentsNext}
+            onBack={handleBackClick}
+            completedSteps={completedSteps}
+          />
+        );
+    }
+  }
+
+  // Login/Signup flow components (existing code)
   const LoginStep = () => (
     <div className="bg-white rounded-2xl p-8 shadow-2xl max-w-md w-full">
       <h2 className="text-3xl font-bold text-gray-900 mb-8">Login To Account</h2>
@@ -114,7 +346,7 @@ const LoanApplicationFlow: React.FC<LoanApplicationFlowProps> = ({ onBackToHome 
 
         <button
           type="button"
-          onClick={() => setCurrentStep('estimate')}
+          onClick={handleLogin}
           className="w-full bg-teal-700 text-white py-4 rounded-lg font-bold text-lg hover:bg-teal-800 transition-colors"
         >
           Login
@@ -210,7 +442,7 @@ const LoanApplicationFlow: React.FC<LoanApplicationFlowProps> = ({ onBackToHome 
 
         <button
           type="button"
-          onClick={() => setCurrentStep('estimate')}
+          onClick={handleSignup}
           className="w-full bg-teal-700 text-white py-4 rounded-lg font-bold text-lg hover:bg-teal-800 transition-colors"
         >
           Submit
@@ -247,7 +479,7 @@ const LoanApplicationFlow: React.FC<LoanApplicationFlowProps> = ({ onBackToHome 
         <p className="text-gray-600 mb-8">You are eligible to apply for loan.</p>
 
         <button
-          onClick={() => setCurrentStep('progress')}
+          onClick={handleEstimateNext}
           className="w-full bg-teal-700 text-white py-4 rounded-lg font-bold text-lg hover:bg-teal-800 transition-colors"
         >
           Apply for loan
@@ -314,7 +546,7 @@ const LoanApplicationFlow: React.FC<LoanApplicationFlowProps> = ({ onBackToHome 
 
         <button
           type="button"
-          onClick={() => setCurrentStep('verification')}
+          onClick={handleProgressNext}
           className="w-full bg-teal-700 text-white py-4 rounded-lg font-bold text-lg hover:bg-teal-800 transition-colors"
         >
           Continue
@@ -348,10 +580,7 @@ const LoanApplicationFlow: React.FC<LoanApplicationFlowProps> = ({ onBackToHome 
 
         <button
           type="button"
-          onClick={() => {
-            alert('Verification successful! Loan application completed.');
-            onBackToHome?.();
-          }}
+          onClick={handleVerificationNext}
           className="w-full bg-teal-700 text-white py-4 rounded-lg font-bold text-lg hover:bg-teal-800 transition-colors"
         >
           Verify
@@ -374,16 +603,6 @@ const LoanApplicationFlow: React.FC<LoanApplicationFlowProps> = ({ onBackToHome 
         return <VerificationStep />;
       default:
         return <LoginStep />;
-    }
-  };
-
-  const handleBackClick = () => {
-    const steps: FlowStep[] = ['login', 'signup', 'estimate', 'progress', 'verification'];
-    const currentIndex = steps.indexOf(currentStep);
-    if (currentIndex > 0) {
-      setCurrentStep(steps[currentIndex - 1]);
-    } else {
-      onBackToHome?.();
     }
   };
 
@@ -425,6 +644,13 @@ const LoanApplicationFlow: React.FC<LoanApplicationFlowProps> = ({ onBackToHome 
           <Home size={24} />
         </button>
       </div>
+
+      {/* Resume Application Modal */}
+      <ResumeApplicationModal
+        isOpen={showResumeModal}
+        onResume={handleResumeApplication}
+        onLeave={handleLeaveApplication}
+      />
 
       {/* Custom Slider Styles */}
       <style jsx>{`
