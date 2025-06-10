@@ -48,9 +48,35 @@ export interface IncomeInfo {
   directDeposit: string;
   identificationNo: string;
   hasCoApplicant: boolean;
+  coApplicantData?: {
+    personalInfo: Partial<PersonalInfo>;
+    incomeInfo: Partial<IncomeInfo>;
+  };
 }
 
 export interface VehicleInfo {
+  borrowAmount: string;
+  vehicleInsuranceType: string;
+  originalTitle: string;
+  titleIssueDate: string;
+  vehicleColor: string;
+  plateTagCounty: string;
+  confirmPlateTag: string;
+  vin: string;
+  yearOfCar: string;
+  modelOfCar: string;
+  odometerMileage: string;
+  vehicleWorth: string;
+  titleStatus: string;
+  titleRemarks: string;
+  titleNo: string;
+  plateTagState: string;
+  plateTag: string;
+  plateTagType: string;
+  reEnterVin: string;
+  makeOfCar: string;
+  styleOfCar: string;
+  mileageVerification: string;
   vehicleType: string;
   make: string;
   model: string;
