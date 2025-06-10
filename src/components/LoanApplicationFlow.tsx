@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Eye, EyeOff, ArrowLeft, Home } from 'lucide-react';
+import { Eye, EyeOff, ArrowLeft, Home, ChevronDown } from 'lucide-react';
 import ApplicationStorage from '../utils/ApplicationStorage';
 import ResumeApplicationModal from './ResumeApplicationModal';
 import PersonalInformationStep from './PersonalInformationStep';
@@ -292,7 +292,7 @@ const LoanApplicationFlow: React.FC<LoanApplicationFlowProps> = ({ onBackToHome 
     }
   }
 
-  // Login/Signup flow components (existing code)
+  // Login Step - Matching first image
   const LoginStep = () => (
     <div className="bg-white rounded-2xl p-8 shadow-2xl max-w-md w-full">
       <h2 className="text-3xl font-bold text-gray-900 mb-8">Login To Account</h2>
@@ -300,13 +300,16 @@ const LoanApplicationFlow: React.FC<LoanApplicationFlowProps> = ({ onBackToHome 
       <form className="space-y-6">
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
-          <input
-            type="email"
-            value={formData.email}
-            onChange={(e) => handleInputChange('email', e.target.value)}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
-            placeholder="Email"
-          />
+          <div className="relative">
+            <input
+              type="email"
+              value={formData.email}
+              onChange={(e) => handleInputChange('email', e.target.value)}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 bg-gray-50"
+              placeholder="Email"
+            />
+            <ChevronDown size={20} className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+          </div>
         </div>
 
         <div>
@@ -316,7 +319,7 @@ const LoanApplicationFlow: React.FC<LoanApplicationFlowProps> = ({ onBackToHome 
               type={showPassword ? 'text' : 'password'}
               value={formData.password}
               onChange={(e) => handleInputChange('password', e.target.value)}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 pr-12"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 bg-gray-50 pr-12"
               placeholder="••••••••••••••"
             />
             <button
@@ -339,7 +342,7 @@ const LoanApplicationFlow: React.FC<LoanApplicationFlowProps> = ({ onBackToHome 
             />
             <span className="ml-2 text-sm text-gray-600">Remember me</span>
           </label>
-          <button type="button" className="text-sm text-teal-600 hover:text-teal-700">
+          <button type="button" className="text-sm text-gray-600 hover:text-teal-700">
             Forgot password?
           </button>
         </div>
@@ -352,30 +355,31 @@ const LoanApplicationFlow: React.FC<LoanApplicationFlowProps> = ({ onBackToHome 
           Login
         </button>
 
-        <p className="text-center text-gray-600">
-          Don't have an account?{' '}
+        <p className="text-center text-gray-500">
+          Already has an account?{' '}
           <button
             type="button"
             onClick={() => setCurrentStep('signup')}
-            className="text-teal-600 hover:text-teal-700 font-medium"
+            className="text-gray-900 hover:text-teal-700 font-medium"
           >
-            Sign Up
+            Login
           </button>
         </p>
       </form>
     </div>
   );
 
+  // Signup Step - Matching second image
   const SignupStep = () => (
     <div className="bg-white rounded-2xl p-8 shadow-2xl max-w-md w-full">
       <h2 className="text-3xl font-bold text-gray-900 mb-2">Create New Account</h2>
-      <p className="text-gray-600 mb-8">
-        Already have an account?{' '}
+      <p className="text-gray-500 mb-8">
+        Don't Have an account?{' '}
         <button
           onClick={() => setCurrentStep('login')}
-          className="text-teal-600 hover:text-teal-700 font-medium"
+          className="text-gray-900 hover:text-teal-700 font-medium"
         >
-          Login
+          Sign Up
         </button>
       </p>
       
@@ -383,61 +387,76 @@ const LoanApplicationFlow: React.FC<LoanApplicationFlowProps> = ({ onBackToHome 
         <div className="grid grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">First Name</label>
-            <input
-              type="text"
-              value={formData.firstName}
-              onChange={(e) => handleInputChange('firstName', e.target.value)}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
-              placeholder="Enter Your Name"
-            />
+            <div className="relative">
+              <input
+                type="text"
+                value={formData.firstName}
+                onChange={(e) => handleInputChange('firstName', e.target.value)}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 bg-gray-50"
+                placeholder="Enter Your Name"
+              />
+              <ChevronDown size={20} className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+            </div>
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
-            <input
-              type="text"
-              value={formData.lastName}
-              onChange={(e) => handleInputChange('lastName', e.target.value)}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
-              placeholder="Enter Your Last Name"
-            />
+            <div className="relative">
+              <input
+                type="text"
+                value={formData.lastName}
+                onChange={(e) => handleInputChange('lastName', e.target.value)}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 bg-gray-50"
+                placeholder="Enter Your Last Name"
+              />
+              <ChevronDown size={20} className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+            </div>
           </div>
         </div>
 
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
-          <input
-            type="email"
-            value={formData.email}
-            onChange={(e) => handleInputChange('email', e.target.value)}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
-            placeholder="Enter Your Email"
-          />
+          <div className="relative">
+            <input
+              type="email"
+              value={formData.email}
+              onChange={(e) => handleInputChange('email', e.target.value)}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 bg-gray-50"
+              placeholder="Enter YourEmail"
+            />
+            <ChevronDown size={20} className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+          </div>
         </div>
 
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">Zip Code</label>
-          <input
-            type="text"
-            value={formData.zipCode}
-            onChange={(e) => handleInputChange('zipCode', e.target.value)}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
-            placeholder="Enter Your Zip Code"
-          />
+          <div className="relative">
+            <input
+              type="text"
+              value={formData.zipCode}
+              onChange={(e) => handleInputChange('zipCode', e.target.value)}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 bg-gray-50"
+              placeholder="Enter Your Last Name"
+            />
+            <ChevronDown size={20} className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+          </div>
         </div>
 
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">Loan Type</label>
-          <select
-            value={formData.loanType}
-            onChange={(e) => handleInputChange('loanType', e.target.value)}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
-          >
-            <option value="">Select Loan Type</option>
-            <option value="car-title">Car Title Loan</option>
-            <option value="motorcycle-title">Motorcycle Title Loan</option>
-            <option value="rv-title">RV Title Loan</option>
-            <option value="boat-title">Boat Title Loan</option>
-          </select>
+          <div className="relative">
+            <select
+              value={formData.loanType}
+              onChange={(e) => handleInputChange('loanType', e.target.value)}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 bg-gray-50 appearance-none"
+            >
+              <option value="">Loan Type</option>
+              <option value="car-title">Car Title Loan</option>
+              <option value="motorcycle-title">Motorcycle Title Loan</option>
+              <option value="rv-title">RV Title Loan</option>
+              <option value="boat-title">Boat Title Loan</option>
+            </select>
+            <ChevronDown size={20} className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none" />
+          </div>
         </div>
 
         <button
@@ -451,12 +470,13 @@ const LoanApplicationFlow: React.FC<LoanApplicationFlowProps> = ({ onBackToHome 
     </div>
   );
 
+  // Estimate Step - Matching third image
   const EstimateStep = () => (
     <div className="bg-white rounded-2xl p-8 shadow-2xl max-w-md w-full">
       <div className="text-center mb-8">
-        <h2 className="text-5xl font-bold text-teal-700 mb-4">${formData.loanAmount.toLocaleString()}</h2>
+        <h2 className="text-5xl font-bold text-teal-700 mb-6">${formData.loanAmount.toLocaleString()}</h2>
         
-        <div className="relative mb-6">
+        <div className="relative mb-8">
           <div className="flex justify-between text-sm text-gray-600 mb-2">
             <span>$2500</span>
             <span>$10,000</span>
@@ -476,7 +496,7 @@ const LoanApplicationFlow: React.FC<LoanApplicationFlowProps> = ({ onBackToHome 
         </div>
 
         <h3 className="text-2xl font-bold text-gray-900 mb-2">Your Estimate</h3>
-        <p className="text-gray-600 mb-8">You are eligible to apply for loan.</p>
+        <p className="text-gray-500 mb-8">You are eligible to apply for loan.</p>
 
         <button
           onClick={handleEstimateNext}
@@ -488,6 +508,7 @@ const LoanApplicationFlow: React.FC<LoanApplicationFlowProps> = ({ onBackToHome 
     </div>
   );
 
+  // Progress Step - Matching fourth image
   const ProgressStep = () => (
     <div className="bg-white rounded-2xl p-8 shadow-2xl max-w-md w-full">
       <h2 className="text-3xl font-bold text-gray-900 mb-8">Save Your Progress</h2>
@@ -499,7 +520,7 @@ const LoanApplicationFlow: React.FC<LoanApplicationFlowProps> = ({ onBackToHome 
             type="tel"
             value={formData.phoneNumber}
             onChange={(e) => handleInputChange('phoneNumber', e.target.value)}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 bg-gray-50"
             placeholder="Add your Phone No to get a code"
           />
         </div>
@@ -511,7 +532,7 @@ const LoanApplicationFlow: React.FC<LoanApplicationFlowProps> = ({ onBackToHome 
               type={showPassword ? 'text' : 'password'}
               value={formData.password}
               onChange={(e) => handleInputChange('password', e.target.value)}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 pr-12"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 bg-gray-50 pr-12"
               placeholder="Enter your Password"
             />
             <button
@@ -531,7 +552,7 @@ const LoanApplicationFlow: React.FC<LoanApplicationFlowProps> = ({ onBackToHome 
               type={showConfirmPassword ? 'text' : 'password'}
               value={formData.confirmPassword}
               onChange={(e) => handleInputChange('confirmPassword', e.target.value)}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 pr-12"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 bg-gray-50 pr-12"
               placeholder="Enter your Confirm Password"
             />
             <button
@@ -555,6 +576,7 @@ const LoanApplicationFlow: React.FC<LoanApplicationFlowProps> = ({ onBackToHome 
     </div>
   );
 
+  // Verification Step - Matching fifth image
   const VerificationStep = () => (
     <div className="bg-white rounded-2xl p-8 shadow-2xl max-w-md w-full">
       <h2 className="text-3xl font-bold text-gray-900 mb-4">Phone Verification</h2>
@@ -573,7 +595,7 @@ const LoanApplicationFlow: React.FC<LoanApplicationFlowProps> = ({ onBackToHome 
               maxLength={1}
               value={digit}
               onChange={(e) => handleVerificationCodeChange(index, e.target.value)}
-              className="w-12 h-12 text-center text-xl font-bold border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
+              className="w-12 h-12 text-center text-xl font-bold border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 bg-gray-50"
             />
           ))}
         </div>
