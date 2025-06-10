@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import { Menu, X, User, LogIn } from 'lucide-react';
 
-const Header = () => {
+interface HeaderProps {
+  onLoginClick?: () => void;
+  onSignupClick?: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ onLoginClick, onSignupClick }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navigation = [
@@ -35,11 +40,17 @@ const Header = () => {
 
           {/* Desktop Auth Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <button className="flex items-center space-x-2 hover:text-yellow-400 transition-colors duration-200">
+            <button 
+              onClick={onLoginClick}
+              className="flex items-center space-x-2 hover:text-yellow-400 transition-colors duration-200"
+            >
               <LogIn size={16} />
               <span>User Portal Login</span>
             </button>
-            <button className="bg-white text-teal-700 px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors duration-200">
+            <button 
+              onClick={onSignupClick}
+              className="bg-white text-teal-700 px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors duration-200"
+            >
               Create Account
             </button>
           </div>
@@ -70,11 +81,23 @@ const Header = () => {
                 </a>
               ))}
               <div className="flex flex-col space-y-2 pt-3 border-t border-teal-600">
-                <button className="flex items-center space-x-2 hover:text-yellow-400 transition-colors duration-200 text-left">
+                <button 
+                  onClick={() => {
+                    onLoginClick?.();
+                    setIsMenuOpen(false);
+                  }}
+                  className="flex items-center space-x-2 hover:text-yellow-400 transition-colors duration-200 text-left"
+                >
                   <LogIn size={16} />
                   <span>User Portal Login</span>
                 </button>
-                <button className="bg-white text-teal-700 px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors duration-200">
+                <button 
+                  onClick={() => {
+                    onSignupClick?.();
+                    setIsMenuOpen(false);
+                  }}
+                  className="bg-white text-teal-700 px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors duration-200"
+                >
                   Create Account
                 </button>
               </div>

@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { Star, ArrowRight } from 'lucide-react';
 
-const HeroSection = () => {
+interface HeroSectionProps {
+  onApplyClick?: () => void;
+}
+
+const HeroSection: React.FC<HeroSectionProps> = ({ onApplyClick }) => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -20,7 +24,7 @@ const HeroSection = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
-    // Handle form submission
+    onApplyClick?.();
   };
 
   return (
@@ -49,7 +53,10 @@ const HeroSection = () => {
               </p>
             </div>
             
-            <button className="bg-white text-teal-700 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center space-x-2">
+            <button 
+              onClick={onApplyClick}
+              className="bg-white text-teal-700 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center space-x-2"
+            >
               <span>Apply Now</span>
               <ArrowRight size={20} />
             </button>

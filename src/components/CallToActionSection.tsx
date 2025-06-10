@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 
-const CallToActionSection = () => {
+interface CallToActionSectionProps {
+  onApplyClick?: () => void;
+}
+
+const CallToActionSection: React.FC<CallToActionSectionProps> = ({ onApplyClick }) => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -19,7 +23,7 @@ const CallToActionSection = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Call to Action form submitted:', formData);
-    // Handle form submission
+    onApplyClick?.();
   };
 
   return (
