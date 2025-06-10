@@ -1,7 +1,11 @@
 import React from 'react';
 import { Car, TrendingUp, ArrowRight, Coins } from 'lucide-react';
 
-const ServicesSection = () => {
+interface ServicesSectionProps {
+  onApplyClick?: () => void;
+}
+
+const ServicesSection: React.FC<ServicesSectionProps> = ({ onApplyClick }) => {
   return (
     <section id="services" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -29,7 +33,10 @@ const ServicesSection = () => {
             <p className="text-gray-600 text-center mb-8 leading-relaxed">
               Leverage your car's value for a quick, hassle-free loan while continuing to drive it. No credit check required!
             </p>
-            <button className="w-full bg-teal-700 text-white py-4 rounded-lg font-bold text-lg hover:bg-teal-800 transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2">
+            <button 
+              onClick={onApplyClick}
+              className="w-full bg-teal-700 text-white py-4 rounded-lg font-bold text-lg hover:bg-teal-800 transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2"
+            >
               <span>Apply For Car Title Loan</span>
               <ArrowRight size={20} />
             </button>
@@ -48,7 +55,10 @@ const ServicesSection = () => {
             <p className="text-teal-100 text-center mb-8 leading-relaxed">
               Stuck in a high-interest loan? Refinance with us and lower your payments with better terms.
             </p>
-            <button className="w-full bg-white text-teal-700 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2">
+            <button 
+              onClick={onApplyClick}
+              className="w-full bg-white text-teal-700 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2"
+            >
               <span>Find the Right Loan for You!</span>
               <ArrowRight size={20} />
             </button>
@@ -78,7 +88,10 @@ const ServicesSection = () => {
               <p className="text-teal-100 leading-relaxed text-lg">
                 If you're trapped in a costly loan, we can help! Our Title Loan Buyout Program allows you to refinance your existing loan with better interest rates and improved repayment terms.
               </p>
-              <button className="bg-white text-teal-700 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-all duration-200 transform hover:scale-105 shadow-lg">
+              <button 
+                onClick={onApplyClick}
+                className="bg-white text-teal-700 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-all duration-200 transform hover:scale-105 shadow-lg"
+              >
                 Take Control of Your Loan Today!
               </button>
             </div>

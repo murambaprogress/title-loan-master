@@ -11,26 +11,26 @@ import LoanApplicationFlow from './components/LoanApplicationFlow';
 function App() {
   const [showLoanFlow, setShowLoanFlow] = useState(false);
 
-  const handleLoginClick = () => {
+  const handleApplyClick = () => {
     setShowLoanFlow(true);
   };
 
-  const handleSignupClick = () => {
-    setShowLoanFlow(true);
+  const handleBackToHome = () => {
+    setShowLoanFlow(false);
   };
 
   if (showLoanFlow) {
-    return <LoanApplicationFlow />;
+    return <LoanApplicationFlow onBackToHome={handleBackToHome} />;
   }
 
   return (
     <div className="min-h-screen">
-      <Header onLoginClick={handleLoginClick} onSignupClick={handleSignupClick} />
-      <HeroSection />
+      <Header onLoginClick={handleApplyClick} onSignupClick={handleApplyClick} />
+      <HeroSection onApplyClick={handleApplyClick} />
       <VehicleQualification />
-      <ServicesSection />
+      <ServicesSection onApplyClick={handleApplyClick} />
       <StatsSection />
-      <CallToActionSection />
+      <CallToActionSection onApplyClick={handleApplyClick} />
       <Footer />
     </div>
   );
