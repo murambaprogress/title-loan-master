@@ -112,7 +112,7 @@ const UserDashboard: React.FC<UserDashboardProps> = ({ user, application, onLogo
   const OverviewTab = () => (
     <div className="space-y-6">
       {/* Welcome Section */}
-      <div className="bg-gradient-to-r from-teal-700 to-teal-800 rounded-xl p-6 text-white">
+      <div className="bg-gradient-to-r from-primary-500 to-primary-600 rounded-xl p-6 text-white">
         <h2 className="text-2xl font-bold mb-2">Welcome back, {user.firstName}!</h2>
         <p className="text-teal-100">Manage your applications and profile from your dashboard.</p>
       </div>
@@ -125,7 +125,7 @@ const UserDashboard: React.FC<UserDashboardProps> = ({ user, application, onLogo
               <p className="text-sm text-gray-600">Total Applications</p>
               <p className="text-2xl font-bold text-gray-900">{applications.length}</p>
             </div>
-            <FileText size={32} className="text-teal-600" />
+            <FileText size={32} className="text-primary-500" />
           </div>
         </div>
         
@@ -166,7 +166,7 @@ const UserDashboard: React.FC<UserDashboardProps> = ({ user, application, onLogo
           <h3 className="text-xl font-bold text-gray-900">Recent Applications</h3>
           <button
             onClick={handleNewApplication}
-            className="flex items-center space-x-2 px-4 py-2 bg-teal-700 text-white rounded-lg hover:bg-teal-800 transition-colors duration-200"
+            className="flex items-center space-x-2 px-4 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors duration-200"
           >
             <Plus size={16} />
             <span>New Application</span>
@@ -178,8 +178,8 @@ const UserDashboard: React.FC<UserDashboardProps> = ({ user, application, onLogo
             <div key={app.id} className="border border-gray-200 rounded-lg p-4 hover:bg-gray-50 transition-colors duration-200">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center">
-                    <FileText size={24} className="text-teal-600" />
+                  <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
+                    <FileText size={24} className="text-primary-500" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900">Application #{app.id.slice(-8).toUpperCase()}</h4>
@@ -221,7 +221,7 @@ const UserDashboard: React.FC<UserDashboardProps> = ({ user, application, onLogo
           </button>
           <button
             onClick={handleNewApplication}
-            className="flex items-center space-x-2 px-4 py-3 bg-teal-700 text-white rounded-lg hover:bg-teal-800 transition-colors duration-200"
+            className="flex items-center space-x-2 px-4 py-3 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors duration-200"
           >
             <Plus size={16} />
             <span>New Application</span>
@@ -246,13 +246,13 @@ const UserDashboard: React.FC<UserDashboardProps> = ({ user, application, onLogo
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
               <div className="text-center p-4 bg-gray-50 rounded-lg">
-                <DollarSign size={24} className="mx-auto text-teal-600 mb-2" />
+                <DollarSign size={24} className="mx-auto text-primary-500 mb-2" />
                 <p className="text-sm text-gray-600">Loan Amount</p>
                 <p className="text-lg font-bold text-gray-900">{formatCurrency(app.loanAmount)}</p>
               </div>
               
               <div className="text-center p-4 bg-gray-50 rounded-lg">
-                <Car size={24} className="mx-auto text-teal-600 mb-2" />
+                <Car size={24} className="mx-auto text-primary-500 mb-2" />
                 <p className="text-sm text-gray-600">Vehicle</p>
                 <p className="text-lg font-bold text-gray-900">
                   {app.vehicleInfo.make && app.vehicleInfo.model
@@ -263,7 +263,7 @@ const UserDashboard: React.FC<UserDashboardProps> = ({ user, application, onLogo
               </div>
               
               <div className="text-center p-4 bg-gray-50 rounded-lg">
-                <Calendar size={24} className="mx-auto text-teal-600 mb-2" />
+                <Calendar size={24} className="mx-auto text-primary-500 mb-2" />
                 <p className="text-sm text-gray-600">Last Updated</p>
                 <p className="text-lg font-bold text-gray-900">{formatDate(app.updatedAt)}</p>
               </div>
@@ -279,7 +279,7 @@ const UserDashboard: React.FC<UserDashboardProps> = ({ user, application, onLogo
                 <span>Download</span>
               </button>
               {app.status === 'in_progress' && (
-                <button className="flex items-center space-x-2 px-4 py-2 bg-teal-700 text-white rounded-lg hover:bg-teal-800 transition-colors duration-200">
+                <button className="flex items-center space-x-2 px-4 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors duration-200">
                   <Edit size={16} />
                   <span>Continue</span>
                 </button>
@@ -299,7 +299,7 @@ const UserDashboard: React.FC<UserDashboardProps> = ({ user, application, onLogo
           <h3 className="text-xl font-bold text-gray-900">Profile Information</h3>
           <button
             onClick={() => setShowEditProfile(!showEditProfile)}
-            className="flex items-center space-x-2 px-4 py-2 bg-teal-700 text-white rounded-lg hover:bg-teal-800 transition-colors duration-200"
+            className="flex items-center space-x-2 px-4 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors duration-200"
           >
             <Edit size={16} />
             <span>{showEditProfile ? 'Cancel' : 'Edit Profile'}</span>
@@ -315,7 +315,7 @@ const UserDashboard: React.FC<UserDashboardProps> = ({ user, application, onLogo
                   type="text"
                   value={profileData.firstName}
                   onChange={(e) => setProfileData({...profileData, firstName: e.target.value})}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                 />
               </div>
               
@@ -325,7 +325,7 @@ const UserDashboard: React.FC<UserDashboardProps> = ({ user, application, onLogo
                   type="text"
                   value={profileData.lastName}
                   onChange={(e) => setProfileData({...profileData, lastName: e.target.value})}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                 />
               </div>
               
@@ -335,7 +335,7 @@ const UserDashboard: React.FC<UserDashboardProps> = ({ user, application, onLogo
                   type="email"
                   value={profileData.email}
                   onChange={(e) => setProfileData({...profileData, email: e.target.value})}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                 />
               </div>
               
@@ -345,7 +345,7 @@ const UserDashboard: React.FC<UserDashboardProps> = ({ user, application, onLogo
                   type="tel"
                   value={profileData.phoneNumber}
                   onChange={(e) => setProfileData({...profileData, phoneNumber: e.target.value})}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                 />
               </div>
               
@@ -355,7 +355,7 @@ const UserDashboard: React.FC<UserDashboardProps> = ({ user, application, onLogo
                   type="text"
                   value={profileData.address}
                   onChange={(e) => setProfileData({...profileData, address: e.target.value})}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                 />
               </div>
               
@@ -365,7 +365,7 @@ const UserDashboard: React.FC<UserDashboardProps> = ({ user, application, onLogo
                   type="text"
                   value={profileData.city}
                   onChange={(e) => setProfileData({...profileData, city: e.target.value})}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                 />
               </div>
               
@@ -375,7 +375,7 @@ const UserDashboard: React.FC<UserDashboardProps> = ({ user, application, onLogo
                   type="text"
                   value={profileData.state}
                   onChange={(e) => setProfileData({...profileData, state: e.target.value})}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                 />
               </div>
             </div>
@@ -383,7 +383,7 @@ const UserDashboard: React.FC<UserDashboardProps> = ({ user, application, onLogo
             <div className="flex space-x-4">
               <button
                 onClick={handleProfileUpdate}
-                className="px-6 py-3 bg-teal-700 text-white rounded-lg hover:bg-teal-800 transition-colors duration-200"
+                className="px-6 py-3 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors duration-200"
               >
                 Save Changes
               </button>
@@ -442,7 +442,7 @@ const UserDashboard: React.FC<UserDashboardProps> = ({ user, application, onLogo
             </div>
             <label className="relative inline-flex items-center cursor-pointer">
               <input type="checkbox" className="sr-only peer" defaultChecked />
-              <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-teal-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-teal-600"></div>
+              <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-500"></div>
             </label>
           </div>
           
@@ -453,7 +453,7 @@ const UserDashboard: React.FC<UserDashboardProps> = ({ user, application, onLogo
             </div>
             <label className="relative inline-flex items-center cursor-pointer">
               <input type="checkbox" className="sr-only peer" />
-              <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-teal-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-teal-600"></div>
+              <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-500"></div>
             </label>
           </div>
           
@@ -464,7 +464,7 @@ const UserDashboard: React.FC<UserDashboardProps> = ({ user, application, onLogo
             </div>
             <label className="relative inline-flex items-center cursor-pointer">
               <input type="checkbox" className="sr-only peer" defaultChecked />
-              <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-teal-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-teal-600"></div>
+              <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-500"></div>
             </label>
           </div>
         </div>
@@ -479,7 +479,7 @@ const UserDashboard: React.FC<UserDashboardProps> = ({ user, application, onLogo
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-4">
-              <h1 className="text-2xl font-bold text-teal-700">Title Loan Masters</h1>
+              <h1 className="text-2xl font-bold text-primary-500">Title Loan Masters</h1>
               <span className="text-gray-400">|</span>
               <span className="text-gray-600">Dashboard</span>
             </div>
@@ -491,8 +491,8 @@ const UserDashboard: React.FC<UserDashboardProps> = ({ user, application, onLogo
               </button>
               
               <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 bg-teal-100 rounded-full flex items-center justify-center">
-                  <User size={16} className="text-teal-600" />
+                <div className="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">
+                  <User size={16} className="text-primary-500" />
                 </div>
                 <span className="text-gray-700 font-medium">{user.firstName} {user.lastName}</span>
               </div>
@@ -518,7 +518,7 @@ const UserDashboard: React.FC<UserDashboardProps> = ({ user, application, onLogo
                 <button
                   onClick={() => setActiveTab('overview')}
                   className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left transition-colors duration-200 ${
-                    activeTab === 'overview' ? 'bg-teal-100 text-teal-700' : 'text-gray-600 hover:bg-gray-100'
+                    activeTab === 'overview' ? 'bg-primary-100 text-primary-500' : 'text-gray-600 hover:bg-gray-100'
                   }`}
                 >
                   <FileText size={20} />
@@ -528,7 +528,7 @@ const UserDashboard: React.FC<UserDashboardProps> = ({ user, application, onLogo
                 <button
                   onClick={() => setActiveTab('applications')}
                   className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left transition-colors duration-200 ${
-                    activeTab === 'applications' ? 'bg-teal-100 text-teal-700' : 'text-gray-600 hover:bg-gray-100'
+                    activeTab === 'applications' ? 'bg-primary-100 text-primary-500' : 'text-gray-600 hover:bg-gray-100'
                   }`}
                 >
                   <Car size={20} />
@@ -538,7 +538,7 @@ const UserDashboard: React.FC<UserDashboardProps> = ({ user, application, onLogo
                 <button
                   onClick={() => setActiveTab('profile')}
                   className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left transition-colors duration-200 ${
-                    activeTab === 'profile' ? 'bg-teal-100 text-teal-700' : 'text-gray-600 hover:bg-gray-100'
+                    activeTab === 'profile' ? 'bg-primary-100 text-primary-500' : 'text-gray-600 hover:bg-gray-100'
                   }`}
                 >
                   <User size={20} />
@@ -548,7 +548,7 @@ const UserDashboard: React.FC<UserDashboardProps> = ({ user, application, onLogo
                 <button
                   onClick={() => setActiveTab('settings')}
                   className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left transition-colors duration-200 ${
-                    activeTab === 'settings' ? 'bg-teal-100 text-teal-700' : 'text-gray-600 hover:bg-gray-100'
+                    activeTab === 'settings' ? 'bg-primary-100 text-primary-500' : 'text-gray-600 hover:bg-gray-100'
                   }`}
                 >
                   <Settings size={20} />

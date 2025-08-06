@@ -35,6 +35,7 @@ const StatsSection = () => {
           {stats.map((stat, index) => (
             <div key={index} className="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
               <div className={`w-16 h-16 ${stat.color} rounded-full flex items-center justify-center mx-auto mb-4`}>
+              <div className={`w-16 h-16 bg-primary-100 text-primary-500 rounded-full flex items-center justify-center mx-auto mb-4`}>
                 <stat.icon size={32} />
               </div>
               <h3 className="text-xl font-bold text-gray-900">
@@ -112,7 +113,7 @@ const FeatureItem: React.FC<FeatureItemProps> = ({ title, description, isOpen = 
         <span className="font-semibold text-gray-900">{title}</span>
         <CheckCircle 
           size={20} 
-          className={`transform transition-transform duration-200 ${expanded ? 'rotate-180' : ''} text-teal-600`}
+          className={`transform transition-transform duration-200 ${expanded ? 'rotate-180' : ''} text-primary-500`}
         />
       </button>
       {expanded && (
