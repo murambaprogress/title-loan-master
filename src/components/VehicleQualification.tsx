@@ -26,12 +26,11 @@ const VehicleQualification = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="text-teal-600 font-semibold text-lg mb-2">Value of Your Vehicle</p>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            We offer loans strictly on the value of your car
+            We use your vehicle's value and condition to offer loans with flexible repayment options
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Turn your car into instant cash without selling it. We assess your vehicle's equity and book value competitive loan amounts with flexible repayment arrangements.
+            Turn your car into instant cash without selling it. We use your vehicle's value and condition to offer loans with flexible repayment options.
           </p>
         </div>
 
@@ -41,7 +40,6 @@ const VehicleQualification = () => {
             <h3 className="text-2xl font-bold text-gray-900 mb-2">
               Check Your Loan Amount Qualification Today!
             </h3>
-            <p className="text-gray-600 mb-8">To check how much $ you qualify for</p>
             
             <form onSubmit={handleCheckNow} className="space-y-6">
               <div>
@@ -52,39 +50,54 @@ const VehicleQualification = () => {
                   name="vehicle"
                   value={qualificationData.vehicle}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors duration-200"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
                   required
                 >
                   <option value="">Select your Vehicle</option>
                   <option value="car">Car</option>
                   <option value="truck">Truck</option>
                   <option value="suv">SUV</option>
-                  <option value="motorcycle">Motorcycle</option>
-                  <option value="rv">RV</option>
-                  <option value="boat">Boat</option>
                 </select>
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Select Vehicle Model
+                  Select Vehicle Make
                 </label>
                 <select
                   name="model"
                   value={qualificationData.model}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors duration-200"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
                   required
                 >
-                  <option value="">Select Vehicle Model</option>
-                  <option value="honda">Honda</option>
-                  <option value="toyota">Toyota</option>
-                  <option value="ford">Ford</option>
-                  <option value="chevrolet">Chevrolet</option>
-                  <option value="nissan">Nissan</option>
-                  <option value="hyundai">Hyundai</option>
+                  <option value="">Select Vehicle Make</option>
+                  <option value="acura">Acura</option>
+                  <option value="audi">Audi</option>
                   <option value="bmw">BMW</option>
+                  <option value="buick">Buick</option>
+                  <option value="cadillac">Cadillac</option>
+                  <option value="chevrolet">Chevrolet</option>
+                  <option value="chrysler">Chrysler</option>
+                  <option value="dodge">Dodge</option>
+                  <option value="ford">Ford</option>
+                  <option value="gmc">GMC</option>
+                  <option value="honda">Honda</option>
+                  <option value="hyundai">Hyundai</option>
+                  <option value="infiniti">Infiniti</option>
+                  <option value="jeep">Jeep</option>
+                  <option value="kia">Kia</option>
+                  <option value="lexus">Lexus</option>
+                  <option value="lincoln">Lincoln</option>
+                  <option value="mazda">Mazda</option>
                   <option value="mercedes">Mercedes-Benz</option>
+                  <option value="mitsubishi">Mitsubishi</option>
+                  <option value="nissan">Nissan</option>
+                  <option value="ram">Ram</option>
+                  <option value="subaru">Subaru</option>
+                  <option value="toyota">Toyota</option>
+                  <option value="volkswagen">Volkswagen</option>
+                  <option value="volvo">Volvo</option>
                 </select>
               </div>
 
@@ -96,7 +109,7 @@ const VehicleQualification = () => {
                   name="year"
                   value={qualificationData.year}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors duration-200"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
                   required
                 >
                   <option value="">Select Year</option>
@@ -108,7 +121,7 @@ const VehicleQualification = () => {
 
               <button
                 type="submit"
-                className="w-full bg-teal-700 text-white py-4 rounded-lg font-bold text-lg hover:bg-teal-800 transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2"
+                className="w-full bg-blue-700 text-white py-4 rounded-lg font-bold text-lg hover:bg-blue-800 transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2"
               >
                 <span>Check Now</span>
                 <ArrowRight size={20} />

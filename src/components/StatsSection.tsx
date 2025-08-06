@@ -5,17 +5,17 @@ const StatsSection = () => {
   const stats = [
     {
       icon: MapPin,
-      title: 'Serving Multiple States Nationwide',
+      title: 'Apply online',
       color: 'bg-blue-100 text-blue-600'
     },
     {
       icon: CreditCard,
-      title: 'Flexible payment terms',
+      title: 'Get Pre-Approved',
       color: 'bg-green-100 text-green-600'
     },
     {
       icon: Clock,
-      title: 'Fast approval – cash in 30 minutes!',
+      title: 'Receive a direct deposit in as little as 48 hours',
       color: 'bg-purple-100 text-purple-600'
     }
   ];
@@ -26,7 +26,7 @@ const StatsSection = () => {
         {/* Stats Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Our States
+            Get Money In Three Simple Steps
           </h2>
         </div>
 
@@ -53,8 +53,8 @@ const StatsSection = () => {
             </h2>
             
             <FeatureItem 
-              title="Fast & Easy Process"
-              description="Apply online or in-store and get same-day cash."
+              title="Everything is online, No store Visits"
+              description="Apply online and get same-day cash."
               isOpen={true}
             />
             <FeatureItem 

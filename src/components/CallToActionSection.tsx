@@ -27,7 +27,7 @@ const CallToActionSection: React.FC<CallToActionSectionProps> = ({ onApplyClick 
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-teal-700 to-teal-800">
+    <section className="py-20 bg-gradient-to-br from-blue-700 to-blue-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -35,8 +35,8 @@ const CallToActionSection: React.FC<CallToActionSectionProps> = ({ onApplyClick 
             Call to Action
           </h2>
           <p className="text-xl text-teal-100 max-w-3xl mx-auto leading-relaxed">
-            Need cash fast? Title Loan Masters makes it simple! Apply today and receive funds 
-            in as little as 30 minutes.
+            Need cash fast? Voozh makes it simple! Apply today and receive funds 
+            in as little as 48 hours.
           </p>
         </div>
 
@@ -53,7 +53,7 @@ const CallToActionSection: React.FC<CallToActionSectionProps> = ({ onApplyClick 
                   name="firstName"
                   value={formData.firstName}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors duration-200"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
                   placeholder="First Name"
                   required
                 />
@@ -68,7 +68,7 @@ const CallToActionSection: React.FC<CallToActionSectionProps> = ({ onApplyClick 
                   name="lastName"
                   value={formData.lastName}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors duration-200"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
                   placeholder="Last Name"
                   required
                 />
@@ -83,7 +83,7 @@ const CallToActionSection: React.FC<CallToActionSectionProps> = ({ onApplyClick 
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors duration-200"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
                   placeholder="Email"
                   required
                 />
@@ -98,7 +98,7 @@ const CallToActionSection: React.FC<CallToActionSectionProps> = ({ onApplyClick 
                   name="zipCode"
                   value={formData.zipCode}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors duration-200"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
                   placeholder="Zip Code"
                   required
                 />
@@ -112,20 +112,17 @@ const CallToActionSection: React.FC<CallToActionSectionProps> = ({ onApplyClick 
                   name="loanType"
                   value={formData.loanType}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors duration-200"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
                   required
                 >
                   <option value="">Select Loan Type</option>
                   <option value="car-title">Car Title Loan</option>
-                  <option value="motorcycle-title">Motorcycle Title Loan</option>
-                  <option value="rv-title">RV Title Loan</option>
-                  <option value="boat-title">Boat Title Loan</option>
                 </select>
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-teal-700 text-white py-4 rounded-lg font-bold text-lg hover:bg-teal-800 transition-colors duration-200 transform hover:scale-105 shadow-lg"
+                className="w-full bg-blue-700 text-white py-4 rounded-lg font-bold text-lg hover:bg-blue-800 transition-colors duration-200 transform hover:scale-105 shadow-lg"
               >
                 Apply Now
               </button>

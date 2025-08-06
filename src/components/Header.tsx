@@ -28,11 +28,11 @@ const Header: React.FC<HeaderProps> = ({ onLoginClick, onSignupClick }) => {
   };
 
   return (
-    <header className="bg-teal-700 text-white sticky top-0 z-50 shadow-lg">
+    <header className="bg-blue-700 text-white sticky top-0 z-50 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
-            <h1 className="text-xl font-bold">Title Loan Masters</h1>
+            <h1 className="text-xl font-bold">Voozh</h1>
           </div>
           
           {/* Desktop Navigation */}
@@ -41,7 +41,7 @@ const Header: React.FC<HeaderProps> = ({ onLoginClick, onSignupClick }) => {
               <a
                 key={item.name}
                 href={item.href}
-                className="hover:text-yellow-400 transition-colors duration-200 font-medium"
+                className="hover:text-green-400 transition-colors duration-200 font-medium"
               >
                 {item.name}
               </a>
@@ -52,14 +52,14 @@ const Header: React.FC<HeaderProps> = ({ onLoginClick, onSignupClick }) => {
           <div className="hidden md:flex items-center space-x-4">
             <button 
               onClick={handleUserPortalClick}
-              className="flex items-center space-x-2 hover:text-yellow-400 transition-colors duration-200 font-medium"
+              className="flex items-center space-x-2 hover:text-green-400 transition-colors duration-200 font-medium"
             >
               <LogIn size={16} />
               <span>User Portal Login</span>
             </button>
             <button 
               onClick={handleCreateAccountClick}
-              className="bg-white text-teal-700 px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors duration-200"
+              className="bg-green-500 text-white px-4 py-2 rounded-lg font-medium hover:bg-green-600 transition-colors duration-200"
             >
               Create Account
             </button>
@@ -69,7 +69,7 @@ const Header: React.FC<HeaderProps> = ({ onLoginClick, onSignupClick }) => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-white hover:text-yellow-400 transition-colors duration-200"
+              className="text-white hover:text-green-400 transition-colors duration-200"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -78,25 +78,25 @@ const Header: React.FC<HeaderProps> = ({ onLoginClick, onSignupClick }) => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden bg-teal-800 rounded-lg mt-2 p-4">
+          <div className="md:hidden bg-blue-800 rounded-lg mt-2 p-4">
             <nav className="flex flex-col space-y-3">
               {navigation.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="hover:text-yellow-400 transition-colors duration-200 font-medium"
+                  className="hover:text-green-400 transition-colors duration-200 font-medium"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </a>
               ))}
-              <div className="flex flex-col space-y-2 pt-3 border-t border-teal-600">
+              <div className="flex flex-col space-y-2 pt-3 border-t border-blue-600">
                 <button 
                   onClick={() => {
                     handleUserPortalClick();
                     setIsMenuOpen(false);
                   }}
-                  className="flex items-center space-x-2 hover:text-yellow-400 transition-colors duration-200 text-left font-medium"
+                  className="flex items-center space-x-2 hover:text-green-400 transition-colors duration-200 text-left font-medium"
                 >
                   <LogIn size={16} />
                   <span>User Portal Login</span>
@@ -106,7 +106,7 @@ const Header: React.FC<HeaderProps> = ({ onLoginClick, onSignupClick }) => {
                     handleCreateAccountClick();
                     setIsMenuOpen(false);
                   }}
-                  className="bg-white text-teal-700 px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors duration-200"
+                  className="bg-green-500 text-white px-4 py-2 rounded-lg font-medium hover:bg-green-600 transition-colors duration-200"
                 >
                   Create Account
                 </button>

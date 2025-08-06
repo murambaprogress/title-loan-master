@@ -28,12 +28,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onApplyClick }) => {
   };
 
   return (
-    <section id="home" className="bg-gradient-to-br from-teal-700 to-teal-800 text-white py-20 relative overflow-hidden">
+    <section id="home" className="bg-gradient-to-br from-blue-700 to-blue-800 text-white py-20 relative overflow-hidden">
       {/* Decorative elements */}
-      <div className="absolute top-20 left-20 text-yellow-400 animate-pulse">
+      <div className="absolute top-20 left-20 text-green-400 animate-pulse">
         <Star size={24} fill="currentColor" />
       </div>
-      <div className="absolute bottom-20 left-40 text-yellow-400 animate-pulse">
+      <div className="absolute bottom-20 left-40 text-green-400 animate-pulse">
         <Star size={32} fill="currentColor" />
       </div>
       
@@ -43,19 +43,19 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onApplyClick }) => {
           <div className="space-y-8">
             <div className="space-y-6">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                Fast & Easy Title Loan Master —{' '}
-                <span className="text-yellow-400">Get Cash Today!</span>
+                No Hidden Fees, No Late Fees &{' '}
+                <span className="text-green-400">Not A High Interest Loan</span>
               </h1>
-              <p className="text-xl text-teal-100 leading-relaxed max-w-lg">
-                Unlock the value of your car with Title Loan Masters. Apply now 
-                for a hassle-free title loan and receive cash in as little as 30 
-                minutes—all while keeping your vehicle!
+              <p className="text-xl text-blue-100 leading-relaxed max-w-lg">
+                Unlock the value of your car with Voozh. Apply now 
+                for a low interest title loan and receive a direct deposit in as little as 48 
+                hours—all while in your comfort and driving your vehicle!
               </p>
             </div>
             
             <button 
               onClick={onApplyClick}
-              className="bg-white text-teal-700 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center space-x-2"
+              className="bg-green-500 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-green-600 transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center space-x-2"
             >
               <span>Apply Now</span>
               <ArrowRight size={20} />
@@ -75,7 +75,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onApplyClick }) => {
                     name="firstName"
                     value={formData.firstName}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors duration-200"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
                     placeholder="First Name"
                     required
                   />
@@ -89,7 +89,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onApplyClick }) => {
                     name="lastName"
                     value={formData.lastName}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors duration-200"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
                     placeholder="Last Name"
                     required
                   />
@@ -106,7 +106,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onApplyClick }) => {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors duration-200"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
                     placeholder="Email"
                     required
                   />
@@ -120,7 +120,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onApplyClick }) => {
                     name="zipCode"
                     value={formData.zipCode}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors duration-200"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
                     placeholder="Zip Code"
                     required
                   />
@@ -135,20 +135,17 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onApplyClick }) => {
                   name="loanType"
                   value={formData.loanType}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors duration-200"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
                   required
                 >
                   <option value="">Select Loan Type</option>
                   <option value="car-title">Car Title Loan</option>
-                  <option value="motorcycle-title">Motorcycle Title Loan</option>
-                  <option value="rv-title">RV Title Loan</option>
-                  <option value="boat-title">Boat Title Loan</option>
                 </select>
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-teal-700 text-white py-4 rounded-lg font-bold text-lg hover:bg-teal-800 transition-colors duration-200 transform hover:scale-105 shadow-lg"
+                className="w-full bg-blue-700 text-white py-4 rounded-lg font-bold text-lg hover:bg-blue-800 transition-colors duration-200 transform hover:scale-105 shadow-lg"
               >
                 Submit
               </button>
