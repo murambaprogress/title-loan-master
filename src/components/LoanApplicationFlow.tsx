@@ -342,7 +342,7 @@ const LoanApplicationFlow: React.FC<LoanApplicationFlowProps> = ({ onBackToHome 
               type="email"
               value={formData.email}
               onChange={(e) => handleInputChange('email', e.target.value)}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 bg-gray-50"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-50"
               placeholder="Email"
             />
             <ChevronDown size={20} className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
@@ -356,7 +356,7 @@ const LoanApplicationFlow: React.FC<LoanApplicationFlowProps> = ({ onBackToHome 
               type={showPassword ? 'text' : 'password'}
               value={formData.password}
               onChange={(e) => handleInputChange('password', e.target.value)}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 bg-gray-50 pr-12"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-50 pr-12"
               placeholder="••••••••••••••"
             />
             <button
@@ -375,7 +375,7 @@ const LoanApplicationFlow: React.FC<LoanApplicationFlowProps> = ({ onBackToHome 
               type="checkbox"
               checked={formData.rememberMe}
               onChange={(e) => handleInputChange('rememberMe', e.target.checked)}
-              className="rounded border-gray-300 text-teal-600 focus:ring-teal-500"
+              className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
             />
             <span className="ml-2 text-sm text-gray-600">Remember me</span>
           </label>
@@ -387,7 +387,7 @@ const LoanApplicationFlow: React.FC<LoanApplicationFlowProps> = ({ onBackToHome 
         <button
           type="button"
           onClick={handleLogin}
-          className="w-full bg-teal-700 text-white py-4 rounded-lg font-bold text-lg hover:bg-teal-800 transition-colors"
+          className="w-full bg-blue-700 text-white py-4 rounded-lg font-bold text-lg hover:bg-blue-800 transition-colors"
         >
           Login
         </button>
@@ -499,7 +499,7 @@ const LoanApplicationFlow: React.FC<LoanApplicationFlowProps> = ({ onBackToHome 
         <button
           type="button"
           onClick={handleSignup}
-          className="w-full bg-teal-700 text-white py-4 rounded-lg font-bold text-lg hover:bg-teal-800 transition-colors"
+          className="w-full bg-blue-700 text-white py-4 rounded-lg font-bold text-lg hover:bg-blue-800 transition-colors"
         >
           Submit
         </button>
@@ -537,7 +537,7 @@ const LoanApplicationFlow: React.FC<LoanApplicationFlowProps> = ({ onBackToHome 
 
         <button
           onClick={handleEstimateNext}
-          className="w-full bg-teal-700 text-white py-4 rounded-lg font-bold text-lg hover:bg-teal-800 transition-colors"
+          className="w-full bg-blue-700 text-white py-4 rounded-lg font-bold text-lg hover:bg-blue-800 transition-colors"
         >
           Apply for loan
         </button>
@@ -605,7 +605,7 @@ const LoanApplicationFlow: React.FC<LoanApplicationFlowProps> = ({ onBackToHome 
         <button
           type="button"
           onClick={handleProgressNext}
-          className="w-full bg-teal-700 text-white py-4 rounded-lg font-bold text-lg hover:bg-teal-800 transition-colors"
+          className="w-full bg-blue-700 text-white py-4 rounded-lg font-bold text-lg hover:bg-blue-800 transition-colors"
         >
           Continue
         </button>
@@ -640,7 +640,7 @@ const LoanApplicationFlow: React.FC<LoanApplicationFlowProps> = ({ onBackToHome 
         <button
           type="button"
           onClick={handleVerificationNext}
-          className="w-full bg-teal-700 text-white py-4 rounded-lg font-bold text-lg hover:bg-teal-800 transition-colors"
+          className="w-full bg-blue-700 text-white py-4 rounded-lg font-bold text-lg hover:bg-blue-800 transition-colors"
         >
           Verify
         </button>
@@ -666,7 +666,7 @@ const LoanApplicationFlow: React.FC<LoanApplicationFlowProps> = ({ onBackToHome 
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-600 via-teal-700 to-teal-800 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 flex items-center justify-center p-4">
       <div className="w-full max-w-6xl flex items-center justify-center">
         <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
           {/* Left Column - BMW Image */}
@@ -718,7 +718,7 @@ const LoanApplicationFlow: React.FC<LoanApplicationFlowProps> = ({ onBackToHome 
           height: 20px;
           width: 20px;
           border-radius: 50%;
-          background: #0f766e;
+          background: #1d4ed8;
           cursor: pointer;
           border: 2px solid white;
           box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
@@ -728,7 +728,7 @@ const LoanApplicationFlow: React.FC<LoanApplicationFlowProps> = ({ onBackToHome 
           height: 20px;
           width: 20px;
           border-radius: 50%;
-          background: #0f766e;
+          background: #1d4ed8;
           cursor: pointer;
           border: 2px solid white;
           box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);

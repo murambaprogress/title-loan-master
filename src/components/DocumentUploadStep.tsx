@@ -124,7 +124,7 @@ const DocumentUploadStep: React.FC<DocumentUploadStepProps> = ({
           <div className="flex space-x-4">
             <button
               onClick={() => isPhoto ? handlePhotoUpload(item.id, isMultiple, maxPhotos) : handleFileUpload(item.id)}
-              className="flex items-center space-x-2 px-4 py-2 bg-teal-700 text-white rounded-lg hover:bg-teal-800 transition-colors duration-200"
+              className="flex items-center space-x-2 px-4 py-2 bg-blue-700 text-white rounded-lg hover:bg-blue-800 transition-colors duration-200"
             >
               <Camera size={16} />
               <span>{isPhoto ? 'Capture' : 'Upload File'}</span>
@@ -149,7 +149,7 @@ const DocumentUploadStep: React.FC<DocumentUploadStepProps> = ({
               <div className="flex space-x-2 mt-2">
                 <button
                   onClick={() => handlePhotoUpload(item.id, isMultiple, maxPhotos)}
-                  className="flex items-center space-x-2 px-3 py-1 bg-teal-700 text-white rounded text-sm hover:bg-teal-800 transition-colors duration-200"
+                  className="flex items-center space-x-2 px-3 py-1 bg-blue-700 text-white rounded text-sm hover:bg-blue-800 transition-colors duration-200"
                 >
                   <Camera size={14} />
                   <span>Add More</span>
@@ -172,6 +172,27 @@ const DocumentUploadStep: React.FC<DocumentUploadStepProps> = ({
         
         <div className="bg-white rounded-2xl shadow-xl p-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-8">Pictures Required</h2>
+          
+          {/* Application Submitted Modal */}
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+            <div className="bg-white rounded-2xl p-8 max-w-md w-full shadow-2xl text-center">
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Application submitted</h2>
+              <p className="text-gray-600 mb-8">Got to your user portal</p>
+              
+              <button
+                onClick={onNext}
+                className="w-full bg-blue-700 text-white py-3 rounded-lg font-medium hover:bg-blue-800 transition-colors duration-200"
+              >
+                Go to Portal
+              </button>
+            </div>
+          </div>
           
           <div className="space-y-8">
             {/* Required Documents Section */}
@@ -230,7 +251,7 @@ const DocumentUploadStep: React.FC<DocumentUploadStepProps> = ({
                   <div className="flex items-center space-x-2">
                     <div className="flex-1 bg-gray-200 rounded-full h-2">
                       <div 
-                        className="bg-teal-600 h-2 rounded-full transition-all duration-300"
+                        className="bg-blue-600 h-2 rounded-full transition-all duration-300"
                         style={{ 
                           width: `${(Object.keys(uploadedDocs).length / documents.length) * 100}%` 
                         }}
@@ -247,7 +268,7 @@ const DocumentUploadStep: React.FC<DocumentUploadStepProps> = ({
                   <div className="flex items-center space-x-2">
                     <div className="flex-1 bg-gray-200 rounded-full h-2">
                       <div 
-                        className="bg-teal-600 h-2 rounded-full transition-all duration-300"
+                        className="bg-blue-600 h-2 rounded-full transition-all duration-300"
                         style={{ 
                           width: `${(Object.keys(uploadedPhotos).length / vehiclePhotos.length) * 100}%` 
                         }}
@@ -274,7 +295,7 @@ const DocumentUploadStep: React.FC<DocumentUploadStepProps> = ({
                 disabled={!requiredDocsUploaded || !requiredPhotosUploaded}
                 className={`px-8 py-3 rounded-lg font-medium transition-colors duration-200 ${
                   requiredDocsUploaded && requiredPhotosUploaded
-                    ? 'bg-teal-700 text-white hover:bg-teal-800'
+                    ? 'bg-blue-700 text-white hover:bg-blue-800'
                     : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                 }`}
               >
