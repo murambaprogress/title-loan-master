@@ -35,7 +35,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({ onApplyClick }) => {
             </p>
             <button 
               onClick={onApplyClick}
-              className="w-full bg-blue-700 text-white py-4 rounded-lg font-bold text-lg hover:bg-blue-800 transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2"
+              className="w-full bg-primary-500 text-white py-4 rounded-lg font-bold text-lg hover:bg-primary-600 transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2"
             >
               <span>Apply For Car Title Loan</span>
               <ArrowRight size={20} />
@@ -43,7 +43,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({ onApplyClick }) => {
           </div>
 
           {/* Title Loan Buyout Program */}
-          <div className="bg-gradient-to-br from-blue-700 to-blue-800 text-white rounded-2xl p-8 hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+          <div className="bg-gradient-to-br from-primary-500 to-primary-700 text-white rounded-2xl p-8 hover:shadow-xl transition-all duration-300 transform hover:scale-105">
             <div className="flex justify-center mb-6">
               <div className="bg-white/10 rounded-full p-6">
                 <Coins size={64} className="text-green-400" />
@@ -66,7 +66,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({ onApplyClick }) => {
         </div>
 
         {/* Title Loan Buy Out Section */}
-        <div className="bg-gradient-to-r from-blue-700 to-blue-800 rounded-3xl p-12 text-white">
+        <div className="bg-gradient-to-r from-primary-500 to-primary-700 rounded-3xl p-12 text-white">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
               <div className="bg-white/10 rounded-2xl p-8">

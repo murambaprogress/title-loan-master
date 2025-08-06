@@ -28,7 +28,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onApplyClick }) => {
   };
 
   return (
-    <section id="home" className="bg-gradient-to-br from-blue-700 to-blue-800 text-white py-20 relative overflow-hidden">
+    <section id="home" className="bg-gradient-to-br from-primary-500 to-primary-700 text-white py-20 relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-20 left-20 text-green-400 animate-pulse">
         <Star size={24} fill="currentColor" />
@@ -44,7 +44,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onApplyClick }) => {
             <div className="space-y-6">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                 No Hidden Fees, No Late Fees &{' '}
-                <span className="text-green-400">Not A High Interest Loan</span>
+                <span className="text-white">Not A High Interest Loan</span>
               </h1>
               <p className="text-xl text-blue-100 leading-relaxed max-w-lg">
                 Unlock the value of your car with Voozh. Apply now 
@@ -55,7 +55,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onApplyClick }) => {
             
             <button 
               onClick={onApplyClick}
-              className="bg-green-500 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-green-600 transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center space-x-2"
+              className="bg-white text-primary-500 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center space-x-2"
             >
               <span>Apply Now</span>
               <ArrowRight size={20} />
@@ -76,6 +76,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onApplyClick }) => {
                     value={formData.firstName}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200"
                     placeholder="First Name"
                     required
                   />
@@ -90,6 +91,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onApplyClick }) => {
                     value={formData.lastName}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200"
                     placeholder="Last Name"
                     required
                   />
@@ -107,6 +109,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onApplyClick }) => {
                     value={formData.email}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200"
                     placeholder="Email"
                     required
                   />
@@ -121,6 +124,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onApplyClick }) => {
                     value={formData.zipCode}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200"
                     placeholder="Zip Code"
                     required
                   />
@@ -136,6 +140,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onApplyClick }) => {
                   value={formData.loanType}
                   onChange={handleInputChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200"
                   required
                 >
                   <option value="">Select Loan Type</option>
@@ -145,7 +150,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onApplyClick }) => {
 
               <button
                 type="submit"
-                className="w-full bg-blue-700 text-white py-4 rounded-lg font-bold text-lg hover:bg-blue-800 transition-colors duration-200 transform hover:scale-105 shadow-lg"
+                className="w-full bg-primary-500 text-white py-4 rounded-lg font-bold text-lg hover:bg-primary-600 transition-colors duration-200 transform hover:scale-105 shadow-lg"
               >
                 Submit
               </button>

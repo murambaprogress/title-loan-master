@@ -50,7 +50,7 @@ const VehicleQualification = () => {
                   name="vehicle"
                   value={qualificationData.vehicle}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200"
                   required
                 >
                   <option value="">Select your Vehicle</option>
@@ -68,7 +68,7 @@ const VehicleQualification = () => {
                   name="model"
                   value={qualificationData.model}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200"
                   required
                 >
                   <option value="">Select Vehicle Make</option>
@@ -109,7 +109,7 @@ const VehicleQualification = () => {
                   name="year"
                   value={qualificationData.year}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200"
                   required
                 >
                   <option value="">Select Year</option>
@@ -121,7 +121,7 @@ const VehicleQualification = () => {
 
               <button
                 type="submit"
-                className="w-full bg-blue-700 text-white py-4 rounded-lg font-bold text-lg hover:bg-blue-800 transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2"
+                className="w-full bg-primary-500 text-white py-4 rounded-lg font-bold text-lg hover:bg-primary-600 transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2"
               >
                 <span>Check Now</span>
                 <ArrowRight size={20} />

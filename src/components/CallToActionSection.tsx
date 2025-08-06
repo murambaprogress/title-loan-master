@@ -27,7 +27,7 @@ const CallToActionSection: React.FC<CallToActionSectionProps> = ({ onApplyClick 
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-blue-700 to-blue-800">
+    <section className="py-20 bg-gradient-to-br from-primary-500 to-primary-700">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -54,6 +54,7 @@ const CallToActionSection: React.FC<CallToActionSectionProps> = ({ onApplyClick 
                   value={formData.firstName}
                   onChange={handleInputChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200"
                   placeholder="First Name"
                   required
                 />
@@ -69,6 +70,7 @@ const CallToActionSection: React.FC<CallToActionSectionProps> = ({ onApplyClick 
                   value={formData.lastName}
                   onChange={handleInputChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200"
                   placeholder="Last Name"
                   required
                 />
@@ -84,6 +86,7 @@ const CallToActionSection: React.FC<CallToActionSectionProps> = ({ onApplyClick 
                   value={formData.email}
                   onChange={handleInputChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200"
                   placeholder="Email"
                   required
                 />
@@ -99,6 +102,7 @@ const CallToActionSection: React.FC<CallToActionSectionProps> = ({ onApplyClick 
                   value={formData.zipCode}
                   onChange={handleInputChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200"
                   placeholder="Zip Code"
                   required
                 />
@@ -113,6 +117,7 @@ const CallToActionSection: React.FC<CallToActionSectionProps> = ({ onApplyClick 
                   value={formData.loanType}
                   onChange={handleInputChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200"
                   required
                 >
                   <option value="">Select Loan Type</option>
@@ -122,7 +127,7 @@ const CallToActionSection: React.FC<CallToActionSectionProps> = ({ onApplyClick 
 
               <button
                 type="submit"
-                className="w-full bg-blue-700 text-white py-4 rounded-lg font-bold text-lg hover:bg-blue-800 transition-colors duration-200 transform hover:scale-105 shadow-lg"
+                className="w-full bg-primary-500 text-white py-4 rounded-lg font-bold text-lg hover:bg-primary-600 transition-colors duration-200 transform hover:scale-105 shadow-lg"
               >
                 Apply Now
               </button>

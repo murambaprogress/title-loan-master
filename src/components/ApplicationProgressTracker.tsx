@@ -40,9 +40,9 @@ const ApplicationProgressTracker: React.FC<ApplicationProgressTrackerProps> = ({
               <div
                 className={`w-12 h-12 rounded-full flex items-center justify-center text-sm font-medium transition-all duration-200 ${
                   status === 'completed'
-                    ? 'bg-teal-700 text-white'
+                    ? 'bg-primary-500 text-white'
                     : status === 'current'
-                    ? 'bg-teal-100 text-teal-700 border-2 border-teal-700'
+                    ? 'bg-primary-100 text-primary-500 border-2 border-primary-500'
                     : 'bg-gray-200 text-gray-500'
                 }`}
               >
@@ -54,7 +54,7 @@ const ApplicationProgressTracker: React.FC<ApplicationProgressTrackerProps> = ({
               </div>
               <span
                 className={`mt-2 text-xs font-medium ${
-                  status === 'current' ? 'text-teal-700' : 'text-gray-500'
+                  status === 'current' ? 'text-primary-500' : 'text-gray-500'
                 }`}
               >
                 {step.label}
@@ -64,7 +64,7 @@ const ApplicationProgressTracker: React.FC<ApplicationProgressTrackerProps> = ({
               <div
                 className={`w-16 h-0.5 mx-4 transition-all duration-200 ${
                   completedSteps.includes(steps[index + 1].key as ApplicationStep)
-                    ? 'bg-teal-700'
+                    ? 'bg-primary-500'
                     : 'bg-gray-200'
                 }`}
               />
