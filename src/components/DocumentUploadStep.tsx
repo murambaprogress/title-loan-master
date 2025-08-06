@@ -124,7 +124,7 @@ const DocumentUploadStep: React.FC<DocumentUploadStepProps> = ({
           <div className="flex space-x-4">
             <button
               onClick={() => isPhoto ? handlePhotoUpload(item.id, isMultiple, maxPhotos) : handleFileUpload(item.id)}
-              className="flex items-center space-x-2 px-4 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors duration-200"
+              className="flex items-center space-x-2 px-4 py-2 bg-blue-700 text-white rounded-lg hover:bg-blue-800 transition-colors duration-200"
             >
               <Camera size={16} />
               <span>{isPhoto ? 'Capture' : 'Upload File'}</span>
@@ -149,7 +149,7 @@ const DocumentUploadStep: React.FC<DocumentUploadStepProps> = ({
               <div className="flex space-x-2 mt-2">
                 <button
                   onClick={() => handlePhotoUpload(item.id, isMultiple, maxPhotos)}
-                  className="flex items-center space-x-2 px-3 py-1 bg-primary-500 text-white rounded text-sm hover:bg-primary-600 transition-colors duration-200"
+                  className="flex items-center space-x-2 px-3 py-1 bg-blue-700 text-white rounded text-sm hover:bg-blue-800 transition-colors duration-200"
                 >
                   <Camera size={14} />
                   <span>Add More</span>
@@ -187,7 +187,7 @@ const DocumentUploadStep: React.FC<DocumentUploadStepProps> = ({
               
               <button
                 onClick={onNext}
-                className="w-full bg-primary-500 text-white py-3 rounded-lg font-medium hover:bg-primary-600 transition-colors duration-200"
+                className="w-full bg-blue-700 text-white py-3 rounded-lg font-medium hover:bg-blue-800 transition-colors duration-200"
               >
                 Go to Portal
               </button>
@@ -295,7 +295,7 @@ const DocumentUploadStep: React.FC<DocumentUploadStepProps> = ({
                 disabled={!requiredDocsUploaded || !requiredPhotosUploaded}
                 className={`px-8 py-3 rounded-lg font-medium transition-colors duration-200 ${
                   requiredDocsUploaded && requiredPhotosUploaded
-                    ? 'bg-primary-500 text-white hover:bg-primary-600'
+                    ? 'bg-blue-700 text-white hover:bg-blue-800'
                     : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                 }`}
               >

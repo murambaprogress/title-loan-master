@@ -69,7 +69,7 @@ const IncomeInformationStep: React.FC<IncomeInformationStepProps> = ({
                   type="text"
                   value={formData.incomeSource}
                   onChange={(e) => handleInputChange('incomeSource', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
                   placeholder="Enter Employer/Income Source"
                   required
                 />
@@ -84,7 +84,7 @@ const IncomeInformationStep: React.FC<IncomeInformationStepProps> = ({
                     type="date"
                     value={formData.employmentDuration}
                     onChange={(e) => handleInputChange('employmentDuration', e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
                     required
                   />
                   <Calendar size={20} className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none" />
@@ -99,7 +99,7 @@ const IncomeInformationStep: React.FC<IncomeInformationStepProps> = ({
                   type="text"
                   value={formData.totalGrossMonthlyIncome}
                   onChange={(e) => handleInputChange('totalGrossMonthlyIncome', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
                   placeholder="Enter Amount"
                   required
                 />
@@ -112,7 +112,7 @@ const IncomeInformationStep: React.FC<IncomeInformationStepProps> = ({
                 <select
                   value={formData.paymentFrequency}
                   onChange={(e) => handleInputChange('paymentFrequency', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
                   required
                 >
                   <option value="">Select Payment Frequency</option>
@@ -132,7 +132,7 @@ const IncomeInformationStep: React.FC<IncomeInformationStepProps> = ({
                     type="date"
                     value={formData.nextPayDate}
                     onChange={(e) => handleInputChange('nextPayDate', e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
                     required
                   />
                   <Calendar size={20} className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none" />
@@ -148,7 +148,7 @@ const IncomeInformationStep: React.FC<IncomeInformationStepProps> = ({
                     type="date"
                     value={formData.lastPayDate}
                     onChange={(e) => handleInputChange('lastPayDate', e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
                     required
                   />
                   <Calendar size={20} className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none" />
@@ -162,7 +162,7 @@ const IncomeInformationStep: React.FC<IncomeInformationStepProps> = ({
                 <select
                   value={formData.activeBankruptcy}
                   onChange={(e) => handleInputChange('activeBankruptcy', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
                   required
                 >
                   <option value="">Select</option>
@@ -178,7 +178,7 @@ const IncomeInformationStep: React.FC<IncomeInformationStepProps> = ({
                 <select
                   value={formData.directDeposit}
                   onChange={(e) => handleInputChange('directDeposit', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
                   required
                 >
                   <option value="">Option to Choose One</option>
@@ -205,7 +205,7 @@ const IncomeInformationStep: React.FC<IncomeInformationStepProps> = ({
               </button>
               <button
                 type="submit"
-                className="px-8 py-3 bg-primary-500 text-white rounded-lg font-medium hover:bg-primary-600 transition-colors duration-200"
+                className="px-8 py-3 bg-teal-700 text-white rounded-lg font-medium hover:bg-teal-800 transition-colors duration-200"
               >
                 Next
               </button>

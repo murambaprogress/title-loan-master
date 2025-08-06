@@ -92,7 +92,7 @@ const PersonalInformationStep: React.FC<PersonalInformationStepProps> = ({
                   type="text"
                   value={formData.borrowAmount}
                   onChange={(e) => handleInputChange('borrowAmount', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
                   placeholder="Enter Amount"
                   required
                 />
@@ -106,7 +106,7 @@ const PersonalInformationStep: React.FC<PersonalInformationStepProps> = ({
                   type="text"
                   value={formData.firstName}
                   onChange={(e) => handleInputChange('firstName', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
                   placeholder="Enter First Name"
                   required
                 />
@@ -120,7 +120,7 @@ const PersonalInformationStep: React.FC<PersonalInformationStepProps> = ({
                   type="text"
                   value={formData.lastName}
                   onChange={(e) => handleInputChange('lastName', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
                   placeholder="Enter Last Name"
                   required
                 />
@@ -134,7 +134,7 @@ const PersonalInformationStep: React.FC<PersonalInformationStepProps> = ({
                   type="email"
                   value={formData.emailAddress}
                   onChange={(e) => handleInputChange('emailAddress', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
                   placeholder="Enter Email Address"
                   required
                 />
@@ -148,7 +148,7 @@ const PersonalInformationStep: React.FC<PersonalInformationStepProps> = ({
                   type="text"
                   value={formData.socialSecurityNo}
                   onChange={(e) => handleInputChange('socialSecurityNo', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
                   placeholder="Enter Social Security No"
                   required
                 />
@@ -161,7 +161,7 @@ const PersonalInformationStep: React.FC<PersonalInformationStepProps> = ({
                 <select
                   value={formData.identificationType}
                   onChange={(e) => handleInputChange('identificationType', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
                   required
                 >
                   <option value="">Select Identification Type</option>
@@ -179,7 +179,7 @@ const PersonalInformationStep: React.FC<PersonalInformationStepProps> = ({
                   type="tel"
                   value={formData.phoneNo}
                   onChange={(e) => handleInputChange('phoneNo', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
                   placeholder="Enter Phone No"
                   required
                 />
@@ -192,7 +192,7 @@ const PersonalInformationStep: React.FC<PersonalInformationStepProps> = ({
                 <select
                   value={formData.idIssuingAgency}
                   onChange={(e) => handleInputChange('idIssuingAgency', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
                   required
                 >
                   <option value="">Select ID Issuing Agency</option>
@@ -210,7 +210,7 @@ const PersonalInformationStep: React.FC<PersonalInformationStepProps> = ({
                   type="text"
                   value={formData.identificationNo}
                   onChange={(e) => handleInputChange('identificationNo', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
                   placeholder="Enter Identification No"
                   required
                 />
@@ -225,7 +225,7 @@ const PersonalInformationStep: React.FC<PersonalInformationStepProps> = ({
                     type="date"
                     value={formData.dateOfBirth}
                     onChange={(e) => handleInputChange('dateOfBirth', e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
                     required
                   />
                   <Calendar size={20} className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none" />
@@ -240,7 +240,7 @@ const PersonalInformationStep: React.FC<PersonalInformationStepProps> = ({
                   type="text"
                   value={formData.banksName}
                   onChange={(e) => handleInputChange('banksName', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
                   placeholder="Enter Banks Name"
                   required
                 />
@@ -254,7 +254,7 @@ const PersonalInformationStep: React.FC<PersonalInformationStepProps> = ({
                   type="text"
                   value={formData.homeStreetAddress}
                   onChange={(e) => handleInputChange('homeStreetAddress', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
                   placeholder="Enter Home Street Address"
                   required
                 />
@@ -268,7 +268,7 @@ const PersonalInformationStep: React.FC<PersonalInformationStepProps> = ({
                   type="text"
                   value={formData.city}
                   onChange={(e) => handleInputChange('city', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
                   placeholder="Enter Your City"
                   required
                 />
@@ -281,7 +281,7 @@ const PersonalInformationStep: React.FC<PersonalInformationStepProps> = ({
                 <select
                   value={formData.state}
                   onChange={(e) => handleInputChange('state', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
                   required
                 >
                   <option value="">Select Your State</option>
@@ -299,7 +299,7 @@ const PersonalInformationStep: React.FC<PersonalInformationStepProps> = ({
                   type="text"
                   value={formData.zipCode}
                   onChange={(e) => handleInputChange('zipCode', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
                   placeholder="Enter zip code"
                   required
                 />
@@ -323,7 +323,7 @@ const PersonalInformationStep: React.FC<PersonalInformationStepProps> = ({
               </button>
               <button
                 type="submit"
-                className="px-8 py-3 bg-primary-500 text-white rounded-lg font-medium hover:bg-primary-600 transition-colors duration-200"
+                className="px-8 py-3 bg-teal-700 text-white rounded-lg font-medium hover:bg-teal-800 transition-colors duration-200"
               >
                 Next
               </button>

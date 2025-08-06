@@ -110,7 +110,7 @@ const VehicleInformationStep: React.FC<VehicleInformationStepProps> = ({
                   type="text"
                   value={formData.borrowAmount}
                   onChange={(e) => handleInputChange('borrowAmount', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-gray-50"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 bg-gray-50"
                   placeholder="Enter Amount"
                 />
               </div>
@@ -123,7 +123,7 @@ const VehicleInformationStep: React.FC<VehicleInformationStepProps> = ({
                   type="text"
                   value={formData.vehicleWorth}
                   onChange={(e) => handleInputChange('vehicleWorth', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-gray-50"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 bg-gray-50"
                   placeholder="Enter Amount"
                 />
               </div>
@@ -136,7 +136,7 @@ const VehicleInformationStep: React.FC<VehicleInformationStepProps> = ({
                   <select
                     value={formData.vehicleInsuranceType}
                     onChange={(e) => handleInputChange('vehicleInsuranceType', e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-gray-50 appearance-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 bg-gray-50 appearance-none"
                   >
                     <option value="">Option to Choose One</option>
                     {vehicleInsuranceTypes.map(type => (
@@ -155,7 +155,7 @@ const VehicleInformationStep: React.FC<VehicleInformationStepProps> = ({
                   <select
                     value={formData.titleStatus}
                     onChange={(e) => handleInputChange('titleStatus', e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-gray-50 appearance-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 bg-gray-50 appearance-none"
                   >
                     <option value="">Option to Choose One</option>
                     {titleStatuses.map(status => (
@@ -174,7 +174,7 @@ const VehicleInformationStep: React.FC<VehicleInformationStepProps> = ({
                   <select
                     value={formData.originalTitle}
                     onChange={(e) => handleInputChange('originalTitle', e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-gray-50 appearance-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 bg-gray-50 appearance-none"
                   >
                     <option value="">Option to Choose One</option>
                     <option value="yes">Yes</option>
@@ -192,7 +192,7 @@ const VehicleInformationStep: React.FC<VehicleInformationStepProps> = ({
                   <select
                     value={formData.titleRemarks}
                     onChange={(e) => handleInputChange('titleRemarks', e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-gray-50 appearance-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 bg-gray-50 appearance-none"
                   >
                     <option value="">Option to Choose One</option>
                     <option value="none">None</option>
@@ -213,7 +213,7 @@ const VehicleInformationStep: React.FC<VehicleInformationStepProps> = ({
                     type="date"
                     value={formData.titleIssueDate}
                     onChange={(e) => handleInputChange('titleIssueDate', e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-gray-50"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 bg-gray-50"
                   />
                   <Calendar size={20} className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none" />
                 </div>
@@ -227,7 +227,7 @@ const VehicleInformationStep: React.FC<VehicleInformationStepProps> = ({
                   type="text"
                   value={formData.titleNo}
                   onChange={(e) => handleInputChange('titleNo', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-gray-50"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 bg-gray-50"
                   placeholder="Enter Title No"
                 />
               </div>
@@ -240,7 +240,7 @@ const VehicleInformationStep: React.FC<VehicleInformationStepProps> = ({
                   type="text"
                   value={formData.vehicleColor}
                   onChange={(e) => handleInputChange('vehicleColor', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-gray-50"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 bg-gray-50"
                   placeholder="Enter Color"
                 />
               </div>
@@ -253,7 +253,7 @@ const VehicleInformationStep: React.FC<VehicleInformationStepProps> = ({
                   type="text"
                   value={formData.plateTagState}
                   onChange={(e) => handleInputChange('plateTagState', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-gray-50"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 bg-gray-50"
                   placeholder="Enter Plate/Tag State"
                 />
               </div>
@@ -266,7 +266,7 @@ const VehicleInformationStep: React.FC<VehicleInformationStepProps> = ({
                   type="text"
                   value={formData.plateTagCounty}
                   onChange={(e) => handleInputChange('plateTagCounty', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-gray-50"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 bg-gray-50"
                   placeholder="Enter Plate/Tag County"
                 />
               </div>
@@ -279,7 +279,7 @@ const VehicleInformationStep: React.FC<VehicleInformationStepProps> = ({
                   type="text"
                   value={formData.plateTag}
                   onChange={(e) => handleInputChange('plateTag', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-gray-50"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 bg-gray-50"
                   placeholder="Enter Plate/Tag"
                 />
               </div>
@@ -292,7 +292,7 @@ const VehicleInformationStep: React.FC<VehicleInformationStepProps> = ({
                   type="text"
                   value={formData.confirmPlateTag}
                   onChange={(e) => handleInputChange('confirmPlateTag', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-gray-50"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 bg-gray-50"
                   placeholder="Enter/Confirm Plate/Tag"
                 />
               </div>
@@ -305,7 +305,7 @@ const VehicleInformationStep: React.FC<VehicleInformationStepProps> = ({
                   <select
                     value={formData.plateTagType}
                     onChange={(e) => handleInputChange('plateTagType', e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-gray-50 appearance-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 bg-gray-50 appearance-none"
                   >
                     <option value="">Select Plate/Tag Type</option>
                     {plateTagTypes.map(type => (
@@ -324,7 +324,7 @@ const VehicleInformationStep: React.FC<VehicleInformationStepProps> = ({
                   type="text"
                   value={formData.vin}
                   onChange={(e) => handleInputChange('vin', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-gray-50"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 bg-gray-50"
                   placeholder="Enter the VIN"
                 />
               </div>
@@ -337,7 +337,7 @@ const VehicleInformationStep: React.FC<VehicleInformationStepProps> = ({
                   type="text"
                   value={formData.reEnterVin}
                   onChange={(e) => handleInputChange('reEnterVin', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-gray-50"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 bg-gray-50"
                   placeholder="Re-Enter the VIN"
                 />
               </div>
@@ -350,7 +350,7 @@ const VehicleInformationStep: React.FC<VehicleInformationStepProps> = ({
                   <select
                     value={formData.yearOfCar}
                     onChange={(e) => handleInputChange('yearOfCar', e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-gray-50 appearance-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 bg-gray-50 appearance-none"
                   >
                     <option value="">Select Year of car</option>
                     {years.map(year => (
@@ -369,7 +369,7 @@ const VehicleInformationStep: React.FC<VehicleInformationStepProps> = ({
                   <select
                     value={formData.makeOfCar}
                     onChange={(e) => handleInputChange('makeOfCar', e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-gray-50 appearance-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 bg-gray-50 appearance-none"
                   >
                     <option value="">Enter Make of Car</option>
                     {carMakes.map(make => (
@@ -389,7 +389,7 @@ const VehicleInformationStep: React.FC<VehicleInformationStepProps> = ({
                     type="text"
                     value={formData.modelOfCar}
                     onChange={(e) => handleInputChange('modelOfCar', e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-gray-50"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 bg-gray-50"
                     placeholder="Enter Model of Car"
                   />
                   <ChevronDown size={20} className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none" />
@@ -404,7 +404,7 @@ const VehicleInformationStep: React.FC<VehicleInformationStepProps> = ({
                   <select
                     value={formData.styleOfCar}
                     onChange={(e) => handleInputChange('styleOfCar', e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-gray-50 appearance-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 bg-gray-50 appearance-none"
                   >
                     <option value="">Enter Style of Car</option>
                     {carStyles.map(style => (
@@ -423,7 +423,7 @@ const VehicleInformationStep: React.FC<VehicleInformationStepProps> = ({
                   type="text"
                   value={formData.odometerMileage}
                   onChange={(e) => handleInputChange('odometerMileage', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-gray-50"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 bg-gray-50"
                   placeholder="Enter the Odometer Mileage"
                 />
               </div>
@@ -436,7 +436,7 @@ const VehicleInformationStep: React.FC<VehicleInformationStepProps> = ({
                   type="text"
                   value={formData.mileageVerification}
                   onChange={(e) => handleInputChange('mileageVerification', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-gray-50"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 bg-gray-50"
                   placeholder="Enter the Mileage Verification"
                 />
               </div>
@@ -452,7 +452,7 @@ const VehicleInformationStep: React.FC<VehicleInformationStepProps> = ({
               </button>
               <button
                 type="submit"
-                className="px-8 py-3 bg-primary-500 text-white rounded-lg font-medium hover:bg-primary-600 transition-colors duration-200"
+                className="px-8 py-3 bg-teal-700 text-white rounded-lg font-medium hover:bg-teal-800 transition-colors duration-200"
               >
                 Next
               </button>
