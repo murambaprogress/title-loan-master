@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X, User, LogIn } from 'lucide-react';
+import PrimaryCTAButton from './PrimaryCTAButton';
 
 interface HeaderProps {
   onLoginClick?: () => void;
@@ -59,9 +60,11 @@ const Header: React.FC<HeaderProps> = ({ onLoginClick, onSignupClick }) => {
             </button>
             <button 
               onClick={handleCreateAccountClick}
-              className="bg-green-500 text-white px-4 py-2 rounded-lg font-medium hover:bg-green-600 transition-colors duration-200"
+              className=""
             >
-              Create Account
+              <PrimaryCTAButton onClick={handleCreateAccountClick} variant="secondary" size="medium">
+                Get Started
+              </PrimaryCTAButton>
             </button>
           </div>
 
@@ -106,9 +109,14 @@ const Header: React.FC<HeaderProps> = ({ onLoginClick, onSignupClick }) => {
                     handleCreateAccountClick();
                     setIsMenuOpen(false);
                   }}
-                  className="bg-green-500 text-white px-4 py-2 rounded-lg font-medium hover:bg-green-600 transition-colors duration-200"
+                  className=""
                 >
-                  Create Account
+                  <PrimaryCTAButton onClick={() => {
+                    handleCreateAccountClick();
+                    setIsMenuOpen(false);
+                  }} variant="secondary" size="medium" fullWidth>
+                    Get Started
+                  </PrimaryCTAButton>
                 </button>
               </div>
             </nav>

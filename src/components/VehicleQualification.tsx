@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Car, ArrowRight } from 'lucide-react';
+import PrimaryCTAButton from './PrimaryCTAButton';
 
 const VehicleQualification = () => {
   const [qualificationData, setQualificationData] = useState({
@@ -121,10 +122,12 @@ const VehicleQualification = () => {
 
               <button
                 type="submit"
-                className="w-full bg-blue-700 text-white py-4 rounded-lg font-bold text-lg hover:bg-blue-800 transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2"
+                className="w-full"
               >
-                <span>Check Now</span>
-                <ArrowRight size={20} />
+                <PrimaryCTAButton type="submit" fullWidth className="flex items-center justify-center space-x-2">
+                  <span>Get Started</span>
+                  <ArrowRight size={20} />
+                </PrimaryCTAButton>
               </button>
             </form>
           </div>

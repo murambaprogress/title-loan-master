@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Star, ArrowRight } from 'lucide-react';
+import PrimaryCTAButton from './PrimaryCTAButton';
 
 interface HeroSectionProps {
   onApplyClick?: () => void;
@@ -53,13 +54,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onApplyClick }) => {
               </p>
             </div>
             
-            <button 
-              onClick={onApplyClick}
-              className="bg-green-500 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-green-600 transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center space-x-2"
-            >
-              <span>Apply Now</span>
+            <PrimaryCTAButton onClick={onApplyClick} variant="secondary" className="flex items-center space-x-2">
+              <span>Get Started</span>
               <ArrowRight size={20} />
-            </button>
+            </PrimaryCTAButton>
           </div>
 
           {/* Right Column - Form */}
@@ -145,9 +143,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onApplyClick }) => {
 
               <button
                 type="submit"
-                className="w-full bg-blue-700 text-white py-4 rounded-lg font-bold text-lg hover:bg-blue-800 transition-colors duration-200 transform hover:scale-105 shadow-lg"
+                className="w-full"
               >
-                Submit
+                <PrimaryCTAButton type="submit" fullWidth>
+                  Apply Now
+                </PrimaryCTAButton>
               </button>
             </form>
           </div>

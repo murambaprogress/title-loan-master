@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PrimaryCTAButton from './PrimaryCTAButton';
 
 interface CallToActionSectionProps {
   onApplyClick?: () => void;
@@ -122,9 +123,11 @@ const CallToActionSection: React.FC<CallToActionSectionProps> = ({ onApplyClick 
 
               <button
                 type="submit"
-                className="w-full bg-blue-700 text-white py-4 rounded-lg font-bold text-lg hover:bg-blue-800 transition-colors duration-200 transform hover:scale-105 shadow-lg"
+                className="w-full"
               >
-                Apply Now
+                <PrimaryCTAButton type="submit" fullWidth>
+                  Get Started
+                </PrimaryCTAButton>
               </button>
             </form>
           </div>

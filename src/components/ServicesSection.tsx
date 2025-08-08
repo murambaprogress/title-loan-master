@@ -1,5 +1,6 @@
 import React from 'react';
 import { Car, TrendingUp, ArrowRight, Coins } from 'lucide-react';
+import PrimaryCTAButton from './PrimaryCTAButton';
 
 interface ServicesSectionProps {
   onApplyClick?: () => void;
@@ -33,13 +34,10 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({ onApplyClick }) => {
             <p className="text-gray-600 text-center mb-8 leading-relaxed">
               Leverage your car's value for a quick, hassle-free loan while continuing to drive it. No credit check required!
             </p>
-            <button 
-              onClick={onApplyClick}
-              className="w-full bg-blue-700 text-white py-4 rounded-lg font-bold text-lg hover:bg-blue-800 transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2"
-            >
-              <span>Apply For Car Title Loan</span>
+            <PrimaryCTAButton onClick={onApplyClick} fullWidth className="flex items-center justify-center space-x-2">
+              <span>Get Started</span>
               <ArrowRight size={20} />
-            </button>
+            </PrimaryCTAButton>
           </div>
 
           {/* Title Loan Buyout Program */}
@@ -55,13 +53,10 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({ onApplyClick }) => {
             <p className="text-teal-100 text-center mb-8 leading-relaxed">
               Stuck in a high-interest loan? Refinance with us and lower your payments with better terms.
             </p>
-            <button 
-              onClick={onApplyClick}
-              className="w-full bg-green-500 text-white py-4 rounded-lg font-bold text-lg hover:bg-green-600 transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2"
-            >
-              <span>Find the Right Loan for You!</span>
+            <PrimaryCTAButton onClick={onApplyClick} variant="secondary" fullWidth className="flex items-center justify-center space-x-2">
+              <span>Apply Now</span>
               <ArrowRight size={20} />
-            </button>
+            </PrimaryCTAButton>
           </div>
         </div>
 
@@ -88,12 +83,9 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({ onApplyClick }) => {
               <p className="text-blue-100 leading-relaxed text-lg">
                 If you're trapped in a costly loan, we can help! Our Title Loan Buyout Program allows you to refinance your existing loan with better interest rates and improved repayment terms.
               </p>
-              <button 
-                onClick={onApplyClick}
-                className="bg-green-500 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-green-600 transition-all duration-200 transform hover:scale-105 shadow-lg"
-              >
-                Take Control of Your Loan Today!
-              </button>
+              <PrimaryCTAButton onClick={onApplyClick} variant="secondary">
+                Get Started Today
+              </PrimaryCTAButton>
             </div>
           </div>
         </div>

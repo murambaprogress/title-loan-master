@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Eye, EyeOff, ArrowLeft, Home, ChevronDown } from 'lucide-react';
+import PrimaryCTAButton from './PrimaryCTAButton';
 import ApplicationStorage from '../utils/ApplicationStorage';
 import ResumeApplicationModal from './ResumeApplicationModal';
 import PersonalInformationStep from './PersonalInformationStep';
@@ -387,9 +388,11 @@ const LoanApplicationFlow: React.FC<LoanApplicationFlowProps> = ({ onBackToHome 
         <button
           type="button"
           onClick={handleLogin}
-          className="w-full bg-blue-700 text-white py-4 rounded-lg font-bold text-lg hover:bg-blue-800 transition-colors"
+          className="w-full"
         >
-          Login
+          <PrimaryCTAButton type="button" onClick={handleLogin} fullWidth>
+            Login
+          </PrimaryCTAButton>
         </button>
 
         <p className="text-center text-gray-500">
@@ -499,9 +502,11 @@ const LoanApplicationFlow: React.FC<LoanApplicationFlowProps> = ({ onBackToHome 
         <button
           type="button"
           onClick={handleSignup}
-          className="w-full bg-blue-700 text-white py-4 rounded-lg font-bold text-lg hover:bg-blue-800 transition-colors"
+          className="w-full"
         >
-          Submit
+          <PrimaryCTAButton type="button" onClick={handleSignup} fullWidth>
+            Get Started
+          </PrimaryCTAButton>
         </button>
       </form>
     </div>
@@ -537,9 +542,11 @@ const LoanApplicationFlow: React.FC<LoanApplicationFlowProps> = ({ onBackToHome 
 
         <button
           onClick={handleEstimateNext}
-          className="w-full bg-blue-700 text-white py-4 rounded-lg font-bold text-lg hover:bg-blue-800 transition-colors"
+          className="w-full"
         >
-          Apply for loan
+          <PrimaryCTAButton onClick={handleEstimateNext} fullWidth>
+            Apply Now
+          </PrimaryCTAButton>
         </button>
       </div>
     </div>
@@ -605,9 +612,11 @@ const LoanApplicationFlow: React.FC<LoanApplicationFlowProps> = ({ onBackToHome 
         <button
           type="button"
           onClick={handleProgressNext}
-          className="w-full bg-blue-700 text-white py-4 rounded-lg font-bold text-lg hover:bg-blue-800 transition-colors"
+          className="w-full"
         >
-          Continue
+          <PrimaryCTAButton type="button" onClick={handleProgressNext} fullWidth>
+            Continue
+          </PrimaryCTAButton>
         </button>
       </form>
     </div>
@@ -640,9 +649,11 @@ const LoanApplicationFlow: React.FC<LoanApplicationFlowProps> = ({ onBackToHome 
         <button
           type="button"
           onClick={handleVerificationNext}
-          className="w-full bg-blue-700 text-white py-4 rounded-lg font-bold text-lg hover:bg-blue-800 transition-colors"
+          className="w-full"
         >
-          Verify
+          <PrimaryCTAButton type="button" onClick={handleVerificationNext} fullWidth>
+            Verify
+          </PrimaryCTAButton>
         </button>
       </div>
     </div>
